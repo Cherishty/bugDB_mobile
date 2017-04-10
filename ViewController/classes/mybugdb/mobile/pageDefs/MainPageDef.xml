@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="MainPageDef"
+                Package="mybugdb.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator id="managerBean_dataProvider_rootIter" Binds="root" DataControl="managerBean" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <methodAction id="ActionHandler" RequiresUpdateModel="true" Action="invokeMethod" MethodName="ActionHandler"
+                  IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider">
+      <NamedData NDName="actionEvent" NDValue="" NDType="oracle.adfmf.amx.event.ActionEvent"/>
+    </methodAction>
+    <methodAction id="Execute" RequiresUpdateModel="true" Action="invokeMethod" MethodName="Execute"
+                  IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider"/>
+    <attributeValues IterBinding="managerBean_dataProvider_rootIter" id="filter">
+      <AttrNames>
+        <Item Value="filter"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBean_dataProvider_rootIter" id="loginUserName">
+      <AttrNames>
+        <Item Value="loginUserName"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="getResetLoginUserName" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getResetLoginUserName" IsViewObjectMethod="false" DataControl="managerBean"
+                  InstanceName="data.managerBean.dataProvider"/>
+  </bindings>
+</pageDefinition>

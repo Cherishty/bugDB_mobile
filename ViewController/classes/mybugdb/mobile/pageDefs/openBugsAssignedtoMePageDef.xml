@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="openBugsAssignedtoMePageDef"
+                Package="mybugdb.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="managerBean" id="managerBeanIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="assignedBug" RangeSize="25" DataControl="managerBean"
+                      BeanClass="java.lang.String" id="assignedBugIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="assignedBugIterator" id="assignedBug">
+      <nodeDefinition Name="assignedBug0">
+        <AttrNames>
+          <Item Value="element"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Open Bugs Assigned to Me" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" text="Back" action="back3"/>
+    </amx:facet>
+    <amx:outputText value="Assigned Bug" id="ot3"/>
+    <amx:listView var="row" value="#{bindings.assignedBug.collectionModel}"
+                  fetchSize="#{bindings.assignedBug.rangeSize}" dividerAttribute="element" dividerMode="all" id="lv1">
+      <amx:listItem id="li1">
+        <amx:outputText value="#{row.element}" id="ot2"/>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>

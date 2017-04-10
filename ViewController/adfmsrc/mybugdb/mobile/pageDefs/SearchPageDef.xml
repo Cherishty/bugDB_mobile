@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="SearchPageDef"
+                Package="mybugdb.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="managerBean" id="managerBeanIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="searchedBug" RangeSize="25" DataControl="managerBean"
+                      BeanClass="java.lang.String" id="searchedBugIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="managerBeanIterator" id="filter">
+      <AttrNames>
+        <Item Value="filter"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="searchedBugIterator" id="searchedBug">
+      <nodeDefinition Name="searchedBug0">
+        <AttrNames>
+          <Item Value="element"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

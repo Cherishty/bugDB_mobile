@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="mybugdb.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/Main.amx" usageId="mybugdb_mobile_MainPageDef"/>
+    <page path="/Search.amx" usageId="mybugdb_mobile_SearchPageDef"/>
+    <page path="/Login.amx" usageId="mybugdb_mobile_LoginPageDef"/>
+    <page path="/openBugsAssignedtoMe.amx" usageId="mybugdb_mobile_openBugsAssignedtoMePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="mybugdb_mobile_MainPageDef" path="mybugdb.mobile.pageDefs.MainPageDef"/>
+    <page id="mybugdb_mobile_SearchPageDef" path="mybugdb.mobile.pageDefs.SearchPageDef"/>
+    <page id="mybugdb_mobile_LoginPageDef" path="mybugdb.mobile.pageDefs.LoginPageDef"/>
+    <page id="mybugdb_mobile_openBugsAssignedtoMePageDef" path="mybugdb.mobile.pageDefs.openBugsAssignedtoMePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="managerBean" path="mybugdb.mobile.managerBean"/>
+  </dataControlUsages>
+</Application>
