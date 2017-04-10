@@ -36,5 +36,7 @@
         <Item Value="text"/>
       </AttrNames>
     </attributeValues>
+    <methodAction id="setClearFilter" RequiresUpdateModel="true" Action="invokeMethod" MethodName="setClearFilter"
+                  IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider"/>
   </bindings>
 </pageDefinition>

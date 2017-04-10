@@ -23,9 +23,38 @@ public class managerBean {
     private static final String SORTIDDESC = "EMPLOYEE_ID DESC";
     private static final String SORTID = "EMPLOYEE_ID";
     private static final int ALLRECORDS = -1;
+    private List s_emps = null;
+    
+
+    
+    
     public managerBean() {
     }
   
+    private void initAllBugs(){
+        s_emps = new ArrayList();
+        s_emps.add(new Emp("wjm", "1111111", "wewe"));
+        s_emps.add(new Emp("cty", "1452145", "frty"));
+        s_emps.add(new Emp("zy", "2135874", "rtgr"));
+        s_emps.add(new Emp("wyp", "2541237", "rtwr"));
+        s_emps.add(new Emp("cty", "1287965", "rg4w"));
+        s_emps.add(new Emp("wjm", "1324521", "wew0"));
+        s_emps.add(new Emp("cty", "1452545", "frty"));
+        s_emps.add(new Emp("zy", "2135244", "rtfe"));
+        s_emps.add(new Emp("wyp", "2289637", "rtge"));
+        s_emps.add(new Emp("cty", "12321465", "rv2w"));
+        s_emps.add(new Emp("wjm", "1498921", "wevdv"));
+        s_emps.add(new Emp("cty", "1455245", "fwyh"));
+        s_emps.add(new Emp("zy", "2166474", "rdhr"));
+        s_emps.add(new Emp("wyp", "2596237", "rtwr"));
+        s_emps.add(new Emp("cty", "1211465", "rghw"));
+        s_emps.add(new Emp("wjm", "14517521", "wede"));
+        s_emps.add(new Emp("cty", "1421345", "frth"));
+        s_emps.add(new Emp("zy", "2122174", "rthr"));
+        s_emps.add(new Emp("wyp", "2522137", "rtgr"));
+        s_emps.add(new Emp("cty", "1228965", "rghw"));
+    }
+    
     public void setFilter(String filter) {
         String oldFilter = this.filter;
         this.filter = filter;
@@ -200,28 +229,10 @@ public class managerBean {
     }
 
     private List initList() {
-        List s_emps = null;
-        s_emps = new ArrayList();
-        s_emps.add(new Emp("wjm", "1456521", "wewe"));
-        s_emps.add(new Emp("cty", "1452145", "frty"));
-        s_emps.add(new Emp("zy", "2135874", "rtgr"));
-        s_emps.add(new Emp("wyp", "2541237", "rtwr"));
-        s_emps.add(new Emp("cty", "1287965", "rg4w"));
-        s_emps.add(new Emp("wjm", "1324521", "wew0"));
-        s_emps.add(new Emp("cty", "1452545", "frty"));
-        s_emps.add(new Emp("zy", "2135244", "rtfe"));
-        s_emps.add(new Emp("wyp", "2289637", "rtge"));
-        s_emps.add(new Emp("cty", "12321465", "rv2w"));
-        s_emps.add(new Emp("wjm", "1498921", "wevdv"));
-        s_emps.add(new Emp("cty", "1455245", "fwyh"));
-        s_emps.add(new Emp("zy", "2166474", "rdhr"));
-        s_emps.add(new Emp("wyp", "2596237", "rtwr"));
-        s_emps.add(new Emp("cty", "1211465", "rghw"));
-        s_emps.add(new Emp("wjm", "14517521", "wede"));
-        s_emps.add(new Emp("cty", "1421345", "frth"));
-        s_emps.add(new Emp("zy", "2122174", "rthr"));
-        s_emps.add(new Emp("wyp", "2522137", "rtgr"));
-        s_emps.add(new Emp("cty", "1228965", "rghw"));
+        if(s_emps == null){
+            initAllBugs();
+        }
+        
         return s_emps;
     }
 }
