@@ -7,11 +7,11 @@
     </amx:facet>
     <amx:spacer id="s1" height="50"/>
     <amx:outputText value="UserName" id="ot2"/>
-    <amx:inputText label="UserName" value="#{bindings.userName.inputValue}" simple="true" id="it3"/>
+    <amx:inputText label="UserName" value="#{bindings.userName.inputValue}" simple="true" id="it3" secret="true"/>
     <amx:outputText value="Password" id="ot3"/>
     <amx:inputText label="Password" value="#{bindings.passWord.inputValue}" simple="true" id="it1"/>
     <amx:spacer id="s2" width="150"/>
     <amx:commandButton actionListener="#{bindings.executeLoginUserName.execute}" text="Login" action="login"
-                      inlineStyle="text-align:right;border-radius:4px;" disabled="#{!bindings.getLoginUserName.enabled}" id="cb2"/>
+                      inlineStyle="text-align:right;border-radius:10px;" disabled="#{!bindings.getLoginUserName.enabled}" id="cb2"/>
   </amx:panelPage>
 </amx:view>

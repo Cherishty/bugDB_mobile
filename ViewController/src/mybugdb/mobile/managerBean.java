@@ -1,12 +1,7 @@
 package mybugdb.mobile;
 
 
-import java.io.File;
-
-import java.io.FileOutputStream;
-
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,6 +33,10 @@ public class managerBean {
 
     public String getFilter() {
         return filter;
+    }
+    
+    public void setClearFilter(){
+        filter ="";
     }
     
     
@@ -160,34 +159,43 @@ public class managerBean {
         return empList;
     }
     
-    public String[] getSearchedBug(){
-       List list =new ArrayList();
+    public Emp[] getSearchedBug(){
+        List list1 =new ArrayList();
+         List list2 =new ArrayList();
+         List list3 =new ArrayList();
          String sub= getFilter();
-         for(int i=0;i< initList().size();i++){
-             if(((Emp)(initList().get(i))).getBugnumber().equals(sub))
-                list.add(initList().get(i).toString());
-             
-         }
-         String str[]=new String[list.size()];
-         for(int i=0;i<list.size();i++){
-             str[i]=list.get(i).toString();
-         }
-             
+        for(int i=0;i< initList().size();i++){
+            if(((Emp)(initList().get(i))).getBugnumber().equals(sub)){
+                list1.add(((Emp)initList().get(i)).getName()); 
+                list2.add(((Emp)initList().get(i)).getBugnumber()); 
+                list3.add(((Emp)initList().get(i)).getText()); 
+            }
+              
+        }
+        Emp str[]=new Emp[list1.size()];
+        for(int i=0;i<list1.size();i++){
+            str[i]=new Emp(list1.get(i).toString(), list2.get(i).toString(), list3.get(i).toString());
+        }   
          return str;
     }
     
     public String[] getAssignedBug(){
-       List list =new ArrayList();
+//       List list1 =new ArrayList();
+        List list2 =new ArrayList();
+        List list3 =new ArrayList();
          String sub= username;
          for(int i=0;i< initList().size();i++){
-             if(((Emp)(initList().get(i))).getName().equals(sub))
-                list.add(initList().get(i).toString());
+             if(((Emp)(initList().get(i))).getName().equals(sub)){
+//                 list1.add(((Emp)initList().get(i)).getName()); 
+                 list2.add(((Emp)initList().get(i)).getBugnumber()); 
+                 list3.add(((Emp)initList().get(i)).getText()); 
+             }
+               
          }
-         String str[]=new String[list.size()];
-         for(int i=0;i<list.size();i++){
-             str[i]=list.get(i).toString();
-         }
-             
+         String str[]=new String[list2.size()];
+         for(int i=0;i<list2.size();i++){
+             str[i]=list2.get(i).toString()+"  "+list3.get(i).toString();
+         }   
          return str;
     }
 

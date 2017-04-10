@@ -8,6 +8,7 @@
                       BeanClass="mybugdb.mobile.managerBean" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <CreatableTypes>
       <TypeInfo FullName="mybugdb.mobile.managerBean"/>
+      <TypeInfo FullName="mybugdb.mobile.Emp"/>
     </CreatableTypes>
     <Source>
       <bean-definition BeanClass="mybugdb.mobile.managerBean" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>

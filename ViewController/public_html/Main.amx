@@ -15,7 +15,7 @@
                   <amx:spacer id="s2" width="49"/>
                     <amx:commandButton text="search" id="cb3" action="Search" shortDesc="search"
                                        actionListener="#{bindings.Execute.execute}" iconPosition="trailing"
-                                       inlineStyle="text-align:right;border-radius:4px;"/>
+                                       inlineStyle="text-align:right;border-radius:10px;"/>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
@@ -48,7 +48,7 @@
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf1">
                  <amx:commandButton text="#{bindings.loginUserName.inputValue}" id="cb1" 
-                           inlineStyle="width:85px;height:30px;font-size:20px;border-radius:4px;"/>
+                           inlineStyle="width:85px;height:30px;font-size:20px;border-radius:10px;"/>
                  </amx:cellFormat>
                 <amx:cellFormat id="cf4">
                 <amx:spacer id="s7" width="70"/>
@@ -56,7 +56,7 @@
                 <amx:cellFormat id="cf3">
                 <amx:commandButton actionListener="#{bindings.getResetLoginUserName.execute}" text="Sign out"
                            disabled="#{!bindings.getResetLoginUserName.enabled}" id="cb4"
-                           inlineStyle="width:85px;height:30px;font-size:20px;text-align:right;border-radius:4px;"
+                           inlineStyle="width:85px;height:30px;font-size:20px;text-align:right;border-radius:10px;"
                            action="backlogin"/>
                  </amx:cellFormat>
             </amx:rowLayout>

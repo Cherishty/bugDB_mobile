@@ -3,13 +3,14 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
    <amx:facet name="header">
-      <amx:commandButton text="Back" id="cb1" action="back"/>
+      <amx:commandButton action="back" actionListener="#{bindings.setClearFilter.execute}" text="Back"
+                         disabled="#{!bindings.setClearFilter.enabled}" id="cb2"/>
     </amx:facet>
-    <amx:listView var="row" value="#{bindings.searchedBug.collectionModel}"
-                  fetchSize="#{bindings.searchedBug.rangeSize}" dividerAttribute="element" dividerMode="all" id="lv1">
-      <amx:listItem id="li1">
-        <amx:outputText value="#{row.element}" id="ot3"/>
-      </amx:listItem>
-    </amx:listView>
+    <amx:panelFormLayout id="pfl1">
+      <amx:inputText value="#{bindings.name.inputValue}" label="#{bindings.name.hints.label}" id="it3" readOnly="true"/>
+      <amx:inputText value="#{bindings.bugnumber.inputValue}" label="#{bindings.bugnumber.hints.label}" id="it1"
+                     readOnly="true"/>
+      <amx:inputText value="#{bindings.text.inputValue}" label="#{bindings.text.hints.label}" id="it2"/>
+    </amx:panelFormLayout>
   </amx:panelPage>
 </amx:view>

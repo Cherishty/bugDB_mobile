@@ -21,5 +21,20 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="searchedBugIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="bugnumber">
+      <AttrNames>
+        <Item Value="bugnumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="text">
+      <AttrNames>
+        <Item Value="text"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
