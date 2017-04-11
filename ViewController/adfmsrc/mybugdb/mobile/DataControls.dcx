@@ -9,9 +9,60 @@
     <CreatableTypes>
       <TypeInfo FullName="mybugdb.mobile.managerBean"/>
       <TypeInfo FullName="mybugdb.mobile.Emp"/>
+      <TypeInfo FullName="mybugdb.mobile.Bug"/>
+      <TypeInfo FullName="mybugdb.mobile.Talk"/>
     </CreatableTypes>
     <Source>
       <bean-definition BeanClass="mybugdb.mobile.managerBean" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="Bug" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mybugdb.mobile.Bug"
+                      BeanClass="mybugdb.mobile.Bug" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="mybugdb.mobile.TalkList"/>
+      <TypeInfo FullName="mybugdb.mobile.Bug"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="mybugdb.mobile.Bug" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="BugList" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mybugdb.mobile.BugList"
+                      BeanClass="mybugdb.mobile.BugList" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="mybugdb.mobile.BugList"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="mybugdb.mobile.BugList" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="Talk" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mybugdb.mobile.Talk"
+                      BeanClass="mybugdb.mobile.Talk" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="mybugdb.mobile.Talk"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="mybugdb.mobile.Talk" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="TalkList" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mybugdb.mobile.TalkList"
+                      BeanClass="mybugdb.mobile.TalkList" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="mybugdb.mobile.TalkList"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="mybugdb.mobile.TalkList" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
     </Source>
   </AdapterDataControl>
 </DataControlConfigs>

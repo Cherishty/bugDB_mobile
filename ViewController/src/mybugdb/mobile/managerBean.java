@@ -6,85 +6,67 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import oracle.adfmf.java.beans.PropertyChangeSupport;
 
 
 public class managerBean {
-    private String filter = "";
-    private String username = "";
-    private String loginusername = "";
-    private String password = "";
+    private String m_filter = "";
+    private String m_username = "";
+    private String m_loginusername = "";
+    private String m_password = "";
     private transient PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
     private static List s_employees = null;
     private static final String SORTLNAME = "LAST_NAME";
     private static final String SORTIDDESC = "EMPLOYEE_ID DESC";
     private static final String SORTID = "EMPLOYEE_ID";
     private static final int ALLRECORDS = -1;
-    private List s_emps = null;
+    private HashMap m_allBugs = null;
+    private List m_allTalks=null;
     
 
-    
-    
     public managerBean() {
     }
   
     private void initAllBugs(){
-        s_emps = new ArrayList();
-        s_emps.add(new Emp("wjm", "1111111", "wewe"));
-        s_emps.add(new Emp("cty", "1452145", "frty"));
-        s_emps.add(new Emp("zy", "2135874", "rtgr"));
-        s_emps.add(new Emp("wyp", "2541237", "rtwr"));
-        s_emps.add(new Emp("cty", "1287965", "rg4w"));
-        s_emps.add(new Emp("wjm", "1324521", "wew0"));
-        s_emps.add(new Emp("cty", "1452545", "frty"));
-        s_emps.add(new Emp("zy", "2135244", "rtfe"));
-        s_emps.add(new Emp("wyp", "2289637", "rtge"));
-        s_emps.add(new Emp("cty", "12321465", "rv2w"));
-        s_emps.add(new Emp("wjm", "1498921", "wevdv"));
-        s_emps.add(new Emp("cty", "1455245", "fwyh"));
-        s_emps.add(new Emp("zy", "2166474", "rdhr"));
-        s_emps.add(new Emp("wyp", "2596237", "rtwr"));
-        s_emps.add(new Emp("cty", "1211465", "rghw"));
-        s_emps.add(new Emp("wjm", "14517521", "wede"));
-        s_emps.add(new Emp("cty", "1421345", "frth"));
-        s_emps.add(new Emp("zy", "2122174", "rthr"));
-        s_emps.add(new Emp("wyp", "2522137", "rtgr"));
-        s_emps.add(new Emp("cty", "1228965", "rghw"));
+        m_allBugs=(new BugList(1)).getBugList();
     }
     
+    private void initAllTalks(){
+        m_allTalks=(new TalkList(1)).getTalkList();
+    }
+
     public void setFilter(String filter) {
-        String oldFilter = this.filter;
-        this.filter = filter;
+        String oldFilter = this.m_filter;
+        this.m_filter = filter;
     }
 
     public String getFilter() {
-        return filter;
+        return m_filter;
     }
     
     public void setClearFilter(){
-        filter ="";
+        m_filter ="";
     }
     
     
     public void setPassWord(String password) {
-        String oldpassword = this.password;
-        this.password = password;
+        String oldpassword = this.m_password;
+        this.m_password = password;
     }
 
     public String getPassWord() {
-        return password;
+        return m_password;
     }
     
     public void setUserName(String username) {
-        String oldusername = this.username;
-        this.username = username;
+        String oldusername = this.m_username;
+        this.m_username = username;
     }
 
     public String getLoginUserName() {
-        return username;
+        return m_username;
     }
     
     public void setLoginUserName() {
@@ -92,18 +74,18 @@ public class managerBean {
     }
 
     public String getUserName() {
-        return username;
+        return m_username;
     }
     
     public void executeLoginUserName() {
-           loginusername = getUserName();
+           m_loginusername = getUserName();
     }
 
     
     public void getResetLoginUserName() {
-           loginusername ="";
-           username ="";
-           password ="";
+           m_loginusername ="";
+           m_username ="";
+           m_password ="";
         
     }
     
@@ -116,11 +98,11 @@ public class managerBean {
 //            whereClause += "FIRST_NAME LIKE '%" + filter + "%' OR LAST_NAME LIKE '%" + filter + "%'";
 //        }
 //       
-//        s_employees = selectEmpsFromDB(whereClause, SORTLNAME, ALLRECORDS);
+//        s_employees = selectBugsFromDB(whereClause, SORTLNAME, ALLRECORDS);
 //        ..........................give  s_employees to searchBug  to get wanted BU
     }
     
-    private ArrayList selectEmpsFromDB(String filter, String order, int maxRecords) {
+    private ArrayList selectBugsFromDB(String filter, String order, int maxRecords) {
         ArrayList empList = new ArrayList();
 
         try {
@@ -173,8 +155,8 @@ public class managerBean {
 //                    }
 //                }
 //                
-//                Employee e =
-//                    new Employee(id, first, last, email, phone, hireDate, jobId, salary, commPct, mgrId, deptId, emppic,
+//                Bugloyee e =
+//                    new Bugloyee(id, first, last, email, phone, hireDate, jobId, salary, commPct, mgrId, deptId, emppic,
 //                                 false);
 //                empList.add(e);
             }
@@ -188,36 +170,35 @@ public class managerBean {
         return empList;
     }
     
-    public Emp[] getSearchedBug(){
-        List list1 =new ArrayList();
-         List list2 =new ArrayList();
-         List list3 =new ArrayList();
-         String sub= getFilter();
-        for(int i=0;i< initList().size();i++){
-            if(((Emp)(initList().get(i))).getBugnumber().equals(sub)){
-                list1.add(((Emp)initList().get(i)).getName()); 
-                list2.add(((Emp)initList().get(i)).getBugnumber()); 
-                list3.add(((Emp)initList().get(i)).getText()); 
-            }
-              
-        }
-        Emp str[]=new Emp[list1.size()];
-        for(int i=0;i<list1.size();i++){
-            str[i]=new Emp(list1.get(i).toString(), list2.get(i).toString(), list3.get(i).toString());
-        }   
-         return str;
+    public Bug getSearchedBug(){
+        String sub= getFilter();
+        Bug result= (Bug)(getAllBugs().get(sub));
+        return result;
     }
     
-    public String[] getAssignedBug(){
+    public Talk[] getRelatedTalkList(){
+        String sub= getFilter();
+        ArrayList result= new ArrayList();
+        List allTalks=getAllTalks();
+        for (int i=0;i<allTalks.size();i++)
+        {
+            Talk each=(Talk)allTalks.get(i);
+            if (each.getBugNumber().equals(sub))
+                result.add(each);
+        }
+        Talk result1[]=new Talk[result.size()];
+        return (Talk[])result.toArray(result1);
+    }
+    /*public String[] getAssignedBug(){
 //       List list1 =new ArrayList();
         List list2 =new ArrayList();
         List list3 =new ArrayList();
          String sub= username;
-         for(int i=0;i< initList().size();i++){
-             if(((Emp)(initList().get(i))).getName().equals(sub)){
-//                 list1.add(((Emp)initList().get(i)).getName()); 
-                 list2.add(((Emp)initList().get(i)).getBugnumber()); 
-                 list3.add(((Emp)initList().get(i)).getText()); 
+         for(int i=0;i< AllBugs.size();i++){
+             if(((Bug)(AllBugs.get(i))).getName().equals(sub)){
+//                 list1.add(((Bug)AllBugs.get(i)).getName()); 
+                 list2.add(((Bug)AllBugs.get(i)).getBugnumber()); 
+                 list3.add(((Bug)AllBugs.get(i)).getText()); 
              }
                
          }
@@ -226,14 +207,24 @@ public class managerBean {
              str[i]=list2.get(i).toString()+"  "+list3.get(i).toString();
          }   
          return str;
-    }
+    }*/
 
-    private List initList() {
-        if(s_emps == null){
+    private HashMap getAllBugs() 
+    {
+        if(m_allBugs == null){
             initAllBugs();
         }
         
-        return s_emps;
+        return m_allBugs;
+    }
+
+    private List getAllTalks() 
+    {
+        if(m_allTalks == null){
+            initAllTalks();
+        }
+        
+        return m_allTalks;
     }
 }
 

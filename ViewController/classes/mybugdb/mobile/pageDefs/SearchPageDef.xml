@@ -7,6 +7,8 @@
     <iterator Binds="root" RangeSize="25" DataControl="managerBean" id="managerBeanIterator"/>
     <accessorIterator MasterBinding="managerBeanIterator" Binds="searchedBug" RangeSize="25" DataControl="managerBean"
                       BeanClass="java.lang.String" id="searchedBugIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="relatedTalkList" RangeSize="25"
+                      DataControl="managerBean" BeanClass="mybugdb.mobile.Talk" id="relatedTalkListIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="managerBeanIterator" id="filter">
@@ -38,5 +40,53 @@
     </attributeValues>
     <methodAction id="setClearFilter" RequiresUpdateModel="true" Action="invokeMethod" MethodName="setClearFilter"
                   IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider"/>
+    <attributeValues IterBinding="searchedBugIterator" id="bugNumber">
+      <AttrNames>
+        <Item Value="bugNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="assignee">
+      <AttrNames>
+        <Item Value="assignee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="customer">
+      <AttrNames>
+        <Item Value="customer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="severity">
+      <AttrNames>
+        <Item Value="severity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="product">
+      <AttrNames>
+        <Item Value="product"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="component">
+      <AttrNames>
+        <Item Value="component"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="searchedBugIterator" id="lastEdit">
+      <AttrNames>
+        <Item Value="lastEdit"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="relatedTalkListIterator" id="relatedTalkList">
+      <nodeDefinition DefName="mybugdb.mobile.Talk" Name="relatedTalkList0">
+        <AttrNames>
+          <Item Value="title"/>
+          <Item Value="text"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

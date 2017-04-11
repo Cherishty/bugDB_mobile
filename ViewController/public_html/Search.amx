@@ -6,11 +6,35 @@
       <amx:commandButton action="back" actionListener="#{bindings.setClearFilter.execute}" text="Back"
                          disabled="#{!bindings.setClearFilter.enabled}" id="cb2"/>
     </amx:facet>
-    <amx:panelFormLayout id="pfl1">
-      <amx:inputText value="#{bindings.name.inputValue}" label="#{bindings.name.hints.label}" id="it3" readOnly="true"/>
-      <amx:inputText value="#{bindings.bugnumber.inputValue}" label="#{bindings.bugnumber.hints.label}" id="it1"
-                     readOnly="true"/>
-      <amx:inputText value="#{bindings.text.inputValue}" label="#{bindings.text.hints.label}" id="it2"/>
-    </amx:panelFormLayout>
-  </amx:panelPage>
+  <amx:panelFormLayout id="pfl1">
+   <amx:inputText value="#{bindings.bugNumber.inputValue}" label="#{bindings.bugNumber.hints.label}" id="it5"/>
+   <amx:inputText value="#{bindings.assignee.inputValue}" label="#{bindings.assignee.hints.label}" id="it8"/>
+   <amx:inputText value="#{bindings.text.inputValue}" label="#{bindings.text.hints.label}" id="it4"/>
+   <amx:inputText value="#{bindings.customer.inputValue}" label="#{bindings.customer.hints.label}" id="it6"/>
+   <amx:inputText value="#{bindings.status.inputValue}" label="#{bindings.status.hints.label}" id="it7"/>
+   <amx:inputText value="#{bindings.severity.inputValue}" label="#{bindings.severity.hints.label}" id="it2"/>
+   <amx:inputText value="#{bindings.product.inputValue}" label="#{bindings.product.hints.label}" id="it3"/>
+   <amx:inputText value="#{bindings.component.inputValue}" label="#{bindings.component.hints.label}" id="it1"/>
+   <amx:inputDate value="#{bindings.lastEdit.inputValue}" label="#{bindings.lastEdit.hints.label}" id="id1"/>
+  </amx:panelFormLayout>
+  <amx:listView var="row" value="#{bindings.relatedTalkList.collectionModel}"
+                fetchSize="#{bindings.relatedTalkList.rangeSize}" dividerAttribute="title" dividerMode="all"
+                styleClass="adfmf-listView-insetList" id="lv1">
+   <amx:listItem id="li1">
+    <amx:tableLayout width="100%" id="tl1">
+     <amx:rowLayout id="rl1">
+      <amx:cellFormat width="10px" rowSpan="2" id="cf2"/>
+      <amx:cellFormat width="100%" height="28px" id="cf1">
+       <amx:outputText value="#{row.title}" id="ot1"/>
+      </amx:cellFormat>
+     </amx:rowLayout>
+     <amx:rowLayout id="rl2">
+      <amx:cellFormat width="100%" height="12px" id="cf3">
+       <amx:outputText value="#{row.text}" styleClass="adfmf-listItem-captionText" id="ot2"/>
+      </amx:cellFormat>
+     </amx:rowLayout>
+    </amx:tableLayout>
+   </amx:listItem>
+  </amx:listView>
+ </amx:panelPage>
 </amx:view>
