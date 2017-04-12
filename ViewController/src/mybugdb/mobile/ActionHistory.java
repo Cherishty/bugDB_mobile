@@ -1,5 +1,5 @@
 package mybugdb.mobile;
-
+import java.util.*;
 public class ActionHistory {
     private String changer;
     private  int Status;
