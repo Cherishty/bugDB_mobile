@@ -16,6 +16,8 @@
                     <amx:commandButton text="search" id="cb3" action="Search" shortDesc="search"
                                        actionListener="#{bindings.Execute.execute}" iconPosition="trailing"
                                        inlineStyle="text-align:right;border-radius:10px;background:#4080BF"/>
+                    <amx:commandButton text="Advanced Search" id="cb2"
+                     inlineStyle="text-align:right;border-radius:10px;background:#4080BF" action="advanced"/>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>

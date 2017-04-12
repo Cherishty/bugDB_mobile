@@ -40,6 +40,7 @@ public class managerBean {
         m_allBugs=(new BugList(1)).getBugList();
     }
     
+  
     private void initAllTalks(){
         m_allTalks=(new TalkList(1)).getTalkList();
     }
@@ -69,6 +70,7 @@ public class managerBean {
     
     public void setClearFilter(){
         m_filter ="";
+        flagOfAdvanced =false;
     }
     
     
@@ -192,9 +194,98 @@ public class managerBean {
         
         return empList;
     }
-    
+    private String m_assignee="";
+    private String m_customer="";
+    private String m_status="";
+    private String m_severity="";
+    private String m_product="";
+    public String getAssignee() {
+        return m_assignee;
+    }
+    public void executeAdvanced(){
+         m_assignee="";
+         m_customer="";
+         m_status="";
+         m_severity="";
+         m_product="";
+    }
+    public void setAssignee(String assignee) {
+        m_assignee = assignee;
+    }
+
+
+    public String getCustomer() {
+        return m_customer;
+    }
+
+    public void setCustomer(String customer) {
+        m_customer = customer;
+    }
+
+    public String getStatus() {
+        return m_status;
+    }
+
+    public void setStatus(String status) {
+        m_status = status;
+    }
+
+    public String getSeverity() {
+        return m_severity;
+    }
+
+    public void setSeverity(String severity) {
+        m_severity = severity;
+    }
+
+    public String getProduct() {
+        return m_product;
+    }
+
+    public void setProduct(String product) {
+        m_product = product;
+    }
+    private boolean flagOfAdvanced = false;
+    public Bug[] getAdvancedBug(){
+        flagOfAdvanced =true;
+        String assignee=getAssignee();
+        String customer=getCustomer();
+        String status= getStatus();
+        String severity=getSeverity();
+        String product=getProduct();
+        HashMap bugMap =getAllBugs();
+        ArrayList result= new ArrayList();
+        Iterator iter = bugMap.entrySet().iterator();
+        while (iter.hasNext()) {
+        Map.Entry entry = (Map.Entry) iter.next();
+        Bug val = (Bug)entry.getValue();
+            if(assignee.length()==0||val.getAssignee().equals(assignee)){
+                if(val.getCustomer().equals(customer)||customer.length()==0){
+                    if((val.getStatus()+"").equals(status)||status.length()==0){
+                        if(val.getSeverity().equals(severity)||severity.length()==0){
+                            if(val.getProduct().equals(product)||product.length()==0){
+                                    result.add(val);
+                            }
+                        }
+                    }
+                }
+            }
+         
+                
+        }
+        Bug result1[]=new Bug[result.size()];
+        return (Bug[])result.toArray(result1);
+
+    }
+
     public Bug getSearchedBug(){
-        String sub= getFilter();
+        String sub ="";
+//        if( flagOfAdvanced ==true){
+//          sub =  
+//        }
+//        else{
+         sub= getFilter();
+//        }
         Bug result= (Bug)(getAllBugs().get(sub));
         return result;
     }

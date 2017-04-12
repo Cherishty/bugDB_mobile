@@ -26,6 +26,12 @@
     <view id="Search1">
       <page>/Search1.amx</page>
     </view>
+    <view id="advanced">
+      <page>/advanced.amx</page>
+    </view>
+    <view id="Search3">
+      <page>/Search3.amx</page>
+    </view>
     <control-flow-rule id="__3">
       <from-activity-id>Main</from-activity-id>
       <control-flow-case id="__5">
@@ -52,6 +58,10 @@
       <control-flow-case id="__4">
         <from-outcome>backlogin</from-outcome>
         <to-activity-id>Login</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__24">
+        <from-outcome>advanced</from-outcome>
+        <to-activity-id>advanced</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__1">
@@ -110,6 +120,28 @@
       <control-flow-case id="__23">
         <from-outcome>to</from-outcome>
         <to-activity-id>Search</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__25">
+      <from-activity-id>advanced</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Main</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__27">
+        <from-outcome>search</from-outcome>
+        <to-activity-id>Search3</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__28">
+      <from-activity-id>Search3</from-activity-id>
+      <control-flow-case id="__29">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>advanced</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__30">
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>Search1</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>

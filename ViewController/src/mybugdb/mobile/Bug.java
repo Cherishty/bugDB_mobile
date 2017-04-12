@@ -19,7 +19,6 @@ public class Bug {
         m_bugNumber = bugNumber;
         m_assignee = assignee;
         m_creator = text;
-
         m_customer = "Frederic";
         m_status = 11;
         m_severity = "S2";
