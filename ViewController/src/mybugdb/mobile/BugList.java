@@ -37,4 +37,8 @@ public class BugList {
         m_bugList.put("0019",new Bug("zy", "0019", "come with me"));
         m_bugList.put("0020",new Bug("zy", "0020", "for a little ride"));
     }
+    public void Add(Bug bug)
+    {
+        m_bugList.put(bug.getBugNumber() ,bug);
+    }
 }

@@ -7,10 +7,12 @@ public class Bug {
     private String m_creator;
     private String m_customer;
     private int m_status;//çŠ¶ï¿½?
-    private String m_severity;//é‡?è¦?ï¿?
-    private String m_product;//äº§å“?å??ç§°
-    private String m_component;//ç»„ä»¶å??ç§°
+    private String m_severity;//ï¿½?ï¿½?ï¿½?
+    private String m_product;//äº§ï¿½?ï¿½??ç§°
+    private String m_component;//ç»„ä»¶ï¿½??ç§°
     private Date m_lastEdit;
+    private List m_actionHistoryList;
+
     public Bug() {
         super();
     }
@@ -27,18 +29,34 @@ public class Bug {
         m_lastEdit = new Date();
     }
 
-    public Bug(String bugNumber, String assignee, String text, String customer, int status, String severity, String product, String component, Date lastEdit) {
+    public Bug(String bugNumber, String assignee, String creator, String customer, int status, String severity, String product, String component, Date lastEdit, List actionHistoryList) {
         m_bugNumber = bugNumber;
         m_assignee = assignee;
-        m_creator = text;
+        m_creator = creator;
         m_customer = customer;
         m_status = status;
         m_severity = severity;
         m_product = product;
         m_component = component;
         m_lastEdit = lastEdit;
+        m_actionHistoryList = actionHistoryList;
     }
 
+    public String getCreator() {
+        return m_creator;
+    }
+
+    public void setCreator(String creator) {
+        m_creator = creator;
+    }
+
+    public List getActionHistoryList() {
+        return m_actionHistoryList;
+    }
+
+    public void addActionHistoryList(ActionHistory actionHistory) {
+        m_actionHistoryList.add(actionHistory);
+    }
 
     public String getBugNumber() {
         return m_bugNumber;

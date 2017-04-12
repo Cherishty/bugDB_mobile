@@ -1,8 +1,11 @@
 # bugDB_mobile
 bugDB on ADFmobile for hackthon Internal
 
-New fature in 2.0
-1.refactor back end and front end (search page),
+New feature in 2.5
+1.add user action historty class, refactor old class.
+
+New feature in 2.0
+1.refactor back end and front end (search page)
 2.implement bugList and talkList
 
 
