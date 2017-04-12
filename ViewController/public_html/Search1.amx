@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+      <amx:facet name="header">
+   <amx:tableLayout id="tl22">
+    <amx:rowLayout id="rl32">
+     <amx:cellFormat id="cf42">
+     <amx:commandButton action="back" actionListener="#{bindings.setClearFilter.execute}" text="Back"
+                         disabled="#{!bindings.setClearFilter.enabled}" id="cb22" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"/>
+    </amx:cellFormat >
+     <amx:cellFormat id="cf52">
+     <amx:spacer id="s22" width="100"/>
+     <amx:commandButton actionListener="#{bindings.updateSearchPage.execute}" text="Submit"
+                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb12" action="to" inlineStyle="width:75px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"
+                        iconPosition="trailing"/>
+    </amx:cellFormat >
+    </amx:rowLayout>
+   </amx:tableLayout>
+   
+   <amx:commandButton actionListener="#{bindings.updateSearchPage.execute}" text="Submit"
+                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb112" action="to" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"/>
+  </amx:facet>
+  <amx:panelFormLayout id="pfl2">
+   <amx:inputText value="#{bindings.bugNumber.inputValue}" label="#{bindings.bugNumber.hints.label}" id="it16"
+                  readOnly="true"/>
+   <amx:inputText value="#{bindings.assignee.inputValue}" label="#{bindings.assignee.hints.label}" id="it14"/>
+   <amx:inputText value="#{bindings.text.inputValue}" label="#{bindings.text.hints.label}" id="it13"/>
+   <amx:inputText value="#{bindings.customer.inputValue}" label="#{bindings.customer.hints.label}" id="it17"
+   readOnly="true"/>
+   <amx:inputText value="#{bindings.status.inputValue}" label="#{bindings.status.hints.label}" id="it10"/>
+   <amx:inputText value="#{bindings.severity.inputValue}" label="#{bindings.severity.hints.label}" id="it12"/>
+   <amx:inputText value="#{bindings.product.inputValue}" label="#{bindings.product.hints.label}" id="it11"/>
+   <amx:inputText value="#{bindings.component.inputValue}" label="#{bindings.component.hints.label}" id="it15"/>
+   <amx:inputDate value="#{bindings.lastEdit.inputValue}" label="#{bindings.lastEdit.hints.label}" id="id2"
+   readOnly="true"/>
+  </amx:panelFormLayout>
+  <amx:listView var="row" value="#{bindings.relatedTalkList1.collectionModel}"
+                fetchSize="#{bindings.relatedTalkList1.rangeSize}" dividerAttribute="title" dividerMode="all"
+                styleClass="adfmf-listView-insetList" id="lv2">
+   <amx:listItem id="li2">
+    <amx:outputText value="#{row.text}" id="ot3"/>
+   </amx:listItem>
+  </amx:listView>
+  <amx:inputText value="#{bindings.bugTalkText.inputValue}" simple="true" id="it9" label="Input Your Text"/>
+ </amx:panelPage>
+</amx:view>
+
