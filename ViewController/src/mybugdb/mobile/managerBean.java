@@ -248,10 +248,10 @@ public class managerBean {
     }
     
     public String  getCheckAccount(){
-        if(m_username.length()==0 || m_password.length() ==0)
-             return "";
-        else
-            return "login";
+//        if(m_username.length()==0 || m_password.length() ==0)
+//             return "";
+//        else
+           return "login";
     }
 }
 

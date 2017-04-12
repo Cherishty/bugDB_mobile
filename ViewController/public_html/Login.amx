@@ -9,9 +9,11 @@
     <amx:outputText value="UserName" id="ot2"/>
     <amx:inputText label="UserName" value="#{bindings.userName.inputValue}" simple="true" id="it3" />
     <amx:outputText value="Password" id="ot3"/>
-    <amx:inputText label="Password" value="#{bindings.passWord.inputValue}" simple="true" id="it1" secret="true"/>
+    <amx:inputText label="Password" value="#{bindings.passWord.inputValue}" simple="true" id="it1" secret="true"
+                   inputType="number"/>
     <amx:spacer id="s2" width="300"/>
-    <amx:commandButton actionListener="#{bindings.executeLoginUserName.execute}" text="Login" action="login"
-                      inlineStyle="text-align:right;border-radius:10px;" disabled="#{!bindings.getLoginUserName.enabled}" id="cb2"/>
+    <amx:commandButton actionListener="#{bindings.executeLoginUserName.execute}" text="Login"
+                      inlineStyle="text-align:right;border-radius:10px;" disabled="#{!bindings.getLoginUserName.enabled}" id="cb2"
+                       action="login"/>
   </amx:panelPage>
 </amx:view>

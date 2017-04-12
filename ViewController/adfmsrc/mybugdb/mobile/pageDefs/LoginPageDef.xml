@@ -22,5 +22,10 @@
     <methodAction id="executeLoginUserName" RequiresUpdateModel="true" Action="invokeMethod"
                   MethodName="executeLoginUserName" IsViewObjectMethod="false" DataControl="managerBean"
                   InstanceName="data.managerBean.dataProvider"/>
+    <attributeValues IterBinding="managerBeanIterator" id="checkAccount">
+      <AttrNames>
+        <Item Value="checkAccount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

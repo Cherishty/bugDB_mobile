@@ -231,4 +231,49 @@
       <property
          name="sdm:polyPoints">R46,554.33136,330.09766,738.0,190.74707,L54</property>
    </ControlFlowCase>
+   <View
+      id="View23">
+      <property
+         name="activityId">Search1</property>
+      <property
+         name="page">/Search1.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Search1&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">524.2988</property>
+      <property
+         name="x">643.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase24"
+      from="View23"
+      to="View2">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">T50,643.0,469.94824,511.0,387.59766,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase25"
+      from="View4"
+      to="View23">
+      <property
+         name="fromOutcome">to</property>
+      <property
+         name="sdm:polyPoints">L58,728.0,444.1953,684.0,523.94824,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase26"
+      from="View23"
+      to="View4">
+      <property
+         name="fromOutcome">to</property>
+      <property
+         name="sdm:polyPoints">R54,688.22974,527.44824,728.0,447.6953,L62</property>
+   </ControlFlowCase>
 </SDM>

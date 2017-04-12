@@ -6,13 +6,15 @@
       <amx:commandButton action="back" actionListener="#{bindings.setClearFilter.execute}" text="Back"
                          disabled="#{!bindings.setClearFilter.enabled}" id="cb2"/>
    <amx:commandButton actionListener="#{bindings.updateSearchPage.execute}" text="Submit"
-                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb1"/>
+                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb1" action="to"/>
   </amx:facet>
   <amx:panelFormLayout id="pfl1">
-   <amx:inputText value="#{bindings.bugNumber.inputValue}" label="#{bindings.bugNumber.hints.label}" id="it5"/>
+   <amx:inputText value="#{bindings.bugNumber.inputValue}" label="#{bindings.bugNumber.hints.label}" id="it5"
+                  readOnly="true"/>
    <amx:inputText value="#{bindings.assignee.inputValue}" label="#{bindings.assignee.hints.label}" id="it8"/>
    <amx:inputText value="#{bindings.text.inputValue}" label="#{bindings.text.hints.label}" id="it4"/>
-   <amx:inputText value="#{bindings.customer.inputValue}" label="#{bindings.customer.hints.label}" id="it6"/>
+   <amx:inputText value="#{bindings.customer.inputValue}" label="#{bindings.customer.hints.label}" id="it6"
+                  readOnly="true"/>
    <amx:inputText value="#{bindings.status.inputValue}" label="#{bindings.status.hints.label}" id="it7"/>
    <amx:inputText value="#{bindings.severity.inputValue}" label="#{bindings.severity.hints.label}" id="it2"/>
    <amx:inputText value="#{bindings.product.inputValue}" label="#{bindings.product.hints.label}" id="it3"/>
@@ -38,6 +40,6 @@
     </amx:tableLayout>
    </amx:listItem> 
   </amx:listView>
-  <amx:inputText value="#{bindings.bugTalkText.inputValue}" simple="true" id="it9"/>
+  <amx:inputText value="#{bindings.bugTalkText.inputValue}" simple="true" id="it9" label="Input Your Text"/>
  </amx:panelPage>
 </amx:view>

@@ -23,6 +23,9 @@
     <view id="openBugsFiledByMe">
       <page>/openBugsFiledByMe.amx</page>
     </view>
+    <view id="Search1">
+      <page>/Search1.amx</page>
+    </view>
     <control-flow-rule id="__3">
       <from-activity-id>Main</from-activity-id>
       <control-flow-case id="__5">
@@ -58,6 +61,10 @@
         <to-activity-id>Main</to-activity-id>
         <transition>flipLeft</transition>
       </control-flow-case>
+      <control-flow-case id="__22">
+        <from-outcome>to</from-outcome>
+        <to-activity-id>Search1</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__8">
       <from-activity-id>Login</from-activity-id>
@@ -92,6 +99,17 @@
       <control-flow-case id="__19">
         <from-outcome>back4</from-outcome>
         <to-activity-id>Main</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__20">
+      <from-activity-id>Search1</from-activity-id>
+      <control-flow-case id="__21">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Main</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__23">
+        <from-outcome>to</from-outcome>
+        <to-activity-id>Search</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>

@@ -6,12 +6,14 @@
     <page path="/Search.amx" usageId="mybugdb_mobile_SearchPageDef"/>
     <page path="/Login.amx" usageId="mybugdb_mobile_LoginPageDef"/>
     <page path="/openBugsAssignedtoMe.amx" usageId="mybugdb_mobile_openBugsAssignedtoMePageDef"/>
+    <page path="/Search1.amx" usageId="mybugdb_mobile_Search1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="mybugdb_mobile_MainPageDef" path="mybugdb.mobile.pageDefs.MainPageDef"/>
     <page id="mybugdb_mobile_SearchPageDef" path="mybugdb.mobile.pageDefs.SearchPageDef"/>
     <page id="mybugdb_mobile_LoginPageDef" path="mybugdb.mobile.pageDefs.LoginPageDef"/>
     <page id="mybugdb_mobile_openBugsAssignedtoMePageDef" path="mybugdb.mobile.pageDefs.openBugsAssignedtoMePageDef"/>
+    <page id="mybugdb_mobile_Search1PageDef" path="mybugdb.mobile.pageDefs.Search1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="managerBean" path="mybugdb.mobile.managerBean"/>
