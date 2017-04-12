@@ -5,9 +5,4 @@
       <adfmf:amx file="mybugdb.Home/HomeTaskFlow.xml#HomeTaskFlow"/>
     </adfmf:content>
   </adfmf:feature>
-  <adfmf:feature id="mybugdb.Help" name="Help">
-    <adfmf:content id="mybugdb.Help.1">
-      <adfmf:localHTML url="mybugdb.Help/help.html"/>
-    </adfmf:content>
-  </adfmf:feature>
 </adfmf:features>
