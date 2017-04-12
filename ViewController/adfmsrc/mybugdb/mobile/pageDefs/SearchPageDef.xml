@@ -88,5 +88,12 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <methodAction id="updateSearchPage" RequiresUpdateModel="true" Action="invokeMethod" MethodName="updateSearchPage"
+                  IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider"/>
+    <attributeValues IterBinding="managerBeanIterator" id="bugTalkText">
+      <AttrNames>
+        <Item Value="bugTalkText"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -6,7 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 import oracle.adfmf.java.beans.PropertyChangeSupport;
 
@@ -16,6 +19,7 @@ public class managerBean {
     private String m_username = "";
     private String m_loginusername = "";
     private String m_password = "";
+    private String m_bugtalktext = "";
     private transient PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
     private static List s_employees = null;
     private static final String SORTLNAME = "LAST_NAME";
@@ -42,6 +46,20 @@ public class managerBean {
         this.m_filter = filter;
     }
 
+    public void updateSearchPage(){
+            if(m_bugtalktext.length()>0){
+            m_allTalks.add(new Talk(m_filter, m_username,new Date(),m_bugtalktext));
+            m_bugtalktext = "";
+            }          
+        }
+    
+    public void setBugTalkText(String bugtalktext ){
+        m_bugtalktext = bugtalktext;
+    }
+    
+    public String getBugTalkText(){
+       return  m_bugtalktext;
+    }
     public String getFilter() {
         return m_filter;
     }
@@ -86,6 +104,8 @@ public class managerBean {
            m_loginusername ="";
            m_username ="";
            m_password ="";
+           m_allBugs = null;
+           m_allTalks=null;
         
     }
     
@@ -225,6 +245,13 @@ public class managerBean {
         }
         
         return m_allTalks;
+    }
+    
+    public String  getCheckAccount(){
+        if(m_username.length()==0 || m_password.length() ==0)
+             return "";
+        else
+            return "login";
     }
 }
 

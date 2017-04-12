@@ -4,8 +4,10 @@
   <amx:panelPage id="pp1">
    <amx:facet name="header">
       <amx:commandButton action="back" actionListener="#{bindings.setClearFilter.execute}" text="Back"
-                         disabled="#{!bindings.setClearFilter.enabled}" id="cb2" iconPosition="trailing" inlineStyle="width:60px;height:30px;font-size:20px;text-align:right;border-radius:10px;"/>
-    </amx:facet>
+                         disabled="#{!bindings.setClearFilter.enabled}" id="cb2"/>
+   <amx:commandButton actionListener="#{bindings.updateSearchPage.execute}" text="Submit"
+                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb1"/>
+  </amx:facet>
   <amx:panelFormLayout id="pfl1">
    <amx:inputText value="#{bindings.bugNumber.inputValue}" label="#{bindings.bugNumber.hints.label}" id="it5"/>
    <amx:inputText value="#{bindings.assignee.inputValue}" label="#{bindings.assignee.hints.label}" id="it8"/>
@@ -34,7 +36,8 @@
       </amx:cellFormat>
      </amx:rowLayout>
     </amx:tableLayout>
-   </amx:listItem>
+   </amx:listItem> 
   </amx:listView>
+  <amx:inputText value="#{bindings.bugTalkText.inputValue}" simple="true" id="it9"/>
  </amx:panelPage>
 </amx:view>
