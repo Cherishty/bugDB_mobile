@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
-    <amx:panelPage id="pp1" inlineStyle="font-size:small; text-align:left;background-color:#87CEFA;">
+    <amx:panelPage id="pp1" inlineStyle="font-size:small; text-align:left;background-color:#9FBFDF;">
         <amx:facet name="header">
             <amx:outputText value="Home" id="ot1" inlineStyle="text-align:center;height:35px;background-color:#637d9f;color:White"/>
         </amx:facet>
@@ -15,7 +15,7 @@
                   <amx:spacer id="s2" width="40"/>
                     <amx:commandButton text="search" id="cb3" action="Search" shortDesc="search"
                                        actionListener="#{bindings.Execute.execute}" iconPosition="trailing"
-                                       inlineStyle="text-align:right;border-radius:10px;"/>
+                                       inlineStyle="text-align:right;border-radius:10px;background:#4080BF"/>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
@@ -42,7 +42,7 @@
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
-        <amx:spacer id="s3" height="79"/>
+        <amx:spacer id="s3" height="100"/>
         
         <amx:tableLayout id="tl3" width="100%" shortDesc="Table">
             <amx:rowLayout id="rl2">
