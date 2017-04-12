@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
-    <amx:panelPage id="pp1" inlineStyle="font-size:small; text-align:left;background-color:#9FBFDF;">
+    <amx:panelPage id="pp1" inlineStyle="font-size:small; text-align:left;">
         <amx:facet name="header">
             <amx:outputText value="Home" id="ot1" inlineStyle="text-align:center;height:35px;background-color:#637d9f;color:White"/>
         </amx:facet>
@@ -9,7 +9,7 @@
             <amx:rowLayout id="rl1">
                 <amx:cellFormat id="cf2" width="100%" shortDesc="Cell">
                     <amx:inputText value="#{bindings.filter.inputValue}" simple="true" id="inputText2"
-                                   styleClass="hr-inputText-search" hintText="Search for Employee" inlineStyle="width:130px;"/>
+                                   styleClass="hr-inputText-search" hintText="Input Bug Number" inlineStyle="width:180px;"/>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf22" width="100%" shortDesc="Cell">
                   <amx:spacer id="s2" width="40"/>
@@ -48,14 +48,14 @@
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf1" width="100%" shortDesc="Cell">
                  <amx:commandButton text="#{bindings.loginUserName.inputValue}" id="cb1" 
-                           inlineStyle="width:85px;height:30px;font-size:20px;border-radius:10px;"/>
+                           inlineStyle="width:85px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"/>
                  </amx:cellFormat>
                
                 <amx:cellFormat id="cf3" width="100%" shortDesc="Cell">
                 <amx:spacer id="s4" width="27"/>
                 <amx:commandButton actionListener="#{bindings.getResetLoginUserName.execute}" text="Sign out"
                            disabled="#{!bindings.getResetLoginUserName.enabled}" id="cb4"
-                           inlineStyle="width:85px;height:30px;font-size:20px;text-align:right;border-radius:10px;"
+                           inlineStyle="width:85px;height:30px;font-size:20px;text-align:right;border-radius:10px;background:#4080BF"
                            action="backlogin" iconPosition="trailing"/>
                  </amx:cellFormat>
             </amx:rowLayout>

@@ -3,10 +3,23 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
    <amx:facet name="header">
-      <amx:commandButton action="back" actionListener="#{bindings.setClearFilter.execute}" text="Back"
-                         disabled="#{!bindings.setClearFilter.enabled}" id="cb2"/>
+   <amx:tableLayout id="tl2">
+    <amx:rowLayout id="rl3">
+     <amx:cellFormat id="cf4">
+     <amx:commandButton action="back" actionListener="#{bindings.setClearFilter.execute}" text="Back"
+                         disabled="#{!bindings.setClearFilter.enabled}" id="cb2" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"/>
+    </amx:cellFormat >
+     <amx:cellFormat id="cf5">
+     <amx:spacer id="s2" width="100"/>
+     <amx:commandButton actionListener="#{bindings.updateSearchPage.execute}" text="Submit"
+                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb1" action="to" inlineStyle="width:75px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"
+                        iconPosition="trailing"/>
+    </amx:cellFormat >
+    </amx:rowLayout>
+   </amx:tableLayout>
+   
    <amx:commandButton actionListener="#{bindings.updateSearchPage.execute}" text="Submit"
-                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb1" action="to"/>
+                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb11" action="to" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"/>
   </amx:facet>
   <amx:panelFormLayout id="pfl1">
    <amx:inputText value="#{bindings.bugNumber.inputValue}" label="#{bindings.bugNumber.hints.label}" id="it5"
@@ -19,26 +32,16 @@
    <amx:inputText value="#{bindings.severity.inputValue}" label="#{bindings.severity.hints.label}" id="it2"/>
    <amx:inputText value="#{bindings.product.inputValue}" label="#{bindings.product.hints.label}" id="it3"/>
    <amx:inputText value="#{bindings.component.inputValue}" label="#{bindings.component.hints.label}" id="it1"/>
-   <amx:inputDate value="#{bindings.lastEdit.inputValue}" label="#{bindings.lastEdit.hints.label}" id="id1"/>
+   <amx:inputDate value="#{bindings.lastEdit.inputValue}" label="#{bindings.lastEdit.hints.label}" id="id1"
+   readOnly="true"/>
   </amx:panelFormLayout>
-  <amx:listView var="row" value="#{bindings.relatedTalkList.collectionModel}"
-                fetchSize="#{bindings.relatedTalkList.rangeSize}" dividerAttribute="title" dividerMode="all"
-                styleClass="adfmf-listView-insetList" id="lv1">
-   <amx:listItem id="li1">
-    <amx:tableLayout width="100%" id="tl1">
-     <amx:rowLayout id="rl1">
-      <amx:cellFormat width="10px" rowSpan="2" id="cf2"/>
-      <amx:cellFormat width="100%" height="28px" id="cf1">
-       <amx:outputText value="#{row.title}" id="ot1"/>
-      </amx:cellFormat>
-     </amx:rowLayout>
-     <amx:rowLayout id="rl2">
-      <amx:cellFormat width="100%" height="12px" id="cf3">
-       <amx:outputText value="#{row.text}" styleClass="adfmf-listItem-captionText" id="ot2"/>
-      </amx:cellFormat>
-     </amx:rowLayout>
-    </amx:tableLayout>
-   </amx:listItem> 
+
+  <amx:listView var="row" value="#{bindings.relatedTalkList1.collectionModel}"
+                fetchSize="#{bindings.relatedTalkList1.rangeSize}" dividerAttribute="title" dividerMode="all"
+                styleClass="adfmf-listView-insetList" id="lv2">
+   <amx:listItem id="li2">
+    <amx:outputText value="#{row.text}" id="ot3"/>
+   </amx:listItem>
   </amx:listView>
   <amx:inputText value="#{bindings.bugTalkText.inputValue}" simple="true" id="it9" label="Input Your Text"/>
  </amx:panelPage>

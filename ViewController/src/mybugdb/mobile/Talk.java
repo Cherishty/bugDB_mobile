@@ -1,5 +1,6 @@
 package mybugdb.mobile;
 import  java.util.Date;
+import java.text.SimpleDateFormat; 
 
 
 public class Talk 
@@ -21,7 +22,8 @@ public class Talk
         m_date = date;
         m_text = text;
         m_bugNumber = bugNumber;
-        m_title=name+"  "+date.toString();
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+        m_title=name+"  Said in Date:  "+sdf.format(date);
     }
 
     public String getTitle() {

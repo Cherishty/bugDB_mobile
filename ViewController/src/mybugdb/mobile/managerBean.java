@@ -9,7 +9,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+
+import java.util.Map;
 
 import oracle.adfmf.java.beans.PropertyChangeSupport;
 
@@ -209,25 +212,24 @@ public class managerBean {
         Talk result1[]=new Talk[result.size()];
         return (Talk[])result.toArray(result1);
     }
-    /*public String[] getAssignedBug(){
-//       List list1 =new ArrayList();
-        List list2 =new ArrayList();
-        List list3 =new ArrayList();
-         String sub= username;
-         for(int i=0;i< AllBugs.size();i++){
-             if(((Bug)(AllBugs.get(i))).getName().equals(sub)){
-//                 list1.add(((Bug)AllBugs.get(i)).getName()); 
-                 list2.add(((Bug)AllBugs.get(i)).getBugnumber()); 
-                 list3.add(((Bug)AllBugs.get(i)).getText()); 
-             }
-               
-         }
-         String str[]=new String[list2.size()];
-         for(int i=0;i<list2.size();i++){
-             str[i]=list2.get(i).toString()+"  "+list3.get(i).toString();
-         }   
-         return str;
-    }*/
+    
+    public Bug[] getAssignedBug(){
+        String sub= m_username;
+        ArrayList result= new ArrayList();
+        HashMap allBugs=getAllBugs();
+        
+        Iterator iter = allBugs.entrySet().iterator();
+        while (iter.hasNext()) {
+        Map.Entry entry = (Map.Entry) iter.next();
+        Bug val = (Bug)entry.getValue();
+            if(val.getAssignee().equals(sub)){
+                result.add(val);
+            }
+                
+        }
+        Bug result1[]=new Bug[result.size()];
+        return (Bug[])result.toArray(result1);
+    }
 
     private HashMap getAllBugs() 
     {

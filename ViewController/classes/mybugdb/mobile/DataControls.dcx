@@ -60,6 +60,7 @@
                       BeanClass="mybugdb.mobile.TalkList" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <CreatableTypes>
       <TypeInfo FullName="mybugdb.mobile.TalkList"/>
+      <TypeInfo FullName="mybugdb.mobile.Talk"/>
     </CreatableTypes>
     <Source>
       <bean-definition BeanClass="mybugdb.mobile.TalkList" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>

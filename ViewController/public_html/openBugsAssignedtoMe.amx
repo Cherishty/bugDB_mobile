@@ -9,10 +9,11 @@
       <amx:commandButton id="cb1" text="Back" action="back3"/>
     </amx:facet>
     <amx:outputText value="Assigned Bug" id="ot3"/>
-    <amx:listView var="row" value="#{bindings.assignedBug.collectionModel}"
-                  fetchSize="#{bindings.assignedBug.rangeSize}" dividerAttribute="element" dividerMode="all" id="lv1">
-      <amx:listItem id="li1">
-        <amx:outputText value="#{row.element}" id="ot2"/>
+    <amx:listView var="row" value="#{bindings.assignedBug3.collectionModel}"
+                  fetchSize="#{bindings.assignedBug3.rangeSize}" dividerAttribute="bugNumber" dividerMode="all"
+                  styleClass="adfmf-listView-insetList" id="lv2">
+      <amx:listItem id="li2">
+        <amx:outputText value="#{row.text}" id="ot4"/>
       </amx:listItem>
     </amx:listView>
   </amx:panelPage>

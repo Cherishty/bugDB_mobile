@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
-  <amx:panelPage id="pp1" inlineStyle="background-color:#87CEFA;">
+  <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:outputText value="Login" id="ot1" inlineStyle="text-align:center;height:35px;background-color:#87CEFA;"/>
+      <amx:outputText value="Login" id="ot1" inlineStyle="text-align:center;height:35px;background-color:#637d9f;"/>
     </amx:facet>
     <amx:spacer id="s1" height="50"/>
     <amx:outputText value="UserName" id="ot2"/>
@@ -13,7 +13,7 @@
                    inputType="number"/>
     <amx:spacer id="s2" width="300"/>
     <amx:commandButton actionListener="#{bindings.executeLoginUserName.execute}" text="Login"
-                      inlineStyle="text-align:right;border-radius:10px;" disabled="#{!bindings.getLoginUserName.enabled}" id="cb2"
+                      inlineStyle="text-align:right;border-radius:10px;background:#4080BF" disabled="#{!bindings.getLoginUserName.enabled}" id="cb2"
                        action="login"/>
   </amx:panelPage>
 </amx:view>

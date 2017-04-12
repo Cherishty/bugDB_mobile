@@ -95,5 +95,13 @@
         <Item Value="bugTalkText"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="relatedTalkListIterator" id="relatedTalkList1">
+      <nodeDefinition DefName="mybugdb.mobile.Talk" Name="relatedTalkList10">
+        <AttrNames>
+          <Item Value="title"/>
+          <Item Value="text"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

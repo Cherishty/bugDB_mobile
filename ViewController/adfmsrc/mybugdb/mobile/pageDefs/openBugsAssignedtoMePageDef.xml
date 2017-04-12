@@ -16,5 +16,29 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="assignedBugIterator" id="assignedBug1">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="assignedBug10">
+        <AttrNames>
+          <Item Value="bugNumber"/>
+          <Item Value="text"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="assignedBugIterator" id="assignedBug2">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="assignedBug20">
+        <AttrNames>
+          <Item Value="bugNumber"/>
+          <Item Value="text"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="assignedBugIterator" id="assignedBug3">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="assignedBug30">
+        <AttrNames>
+          <Item Value="bugNumber"/>
+          <Item Value="text"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

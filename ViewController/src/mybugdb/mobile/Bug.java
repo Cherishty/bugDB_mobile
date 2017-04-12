@@ -4,12 +4,12 @@ public class Bug {
 
     private String m_bugNumber;
     private String m_assignee;
-    private String m_text;
+    private String m_creator;
     private String m_customer;
     private int m_status;//状�?
-    private String m_severity;//重要�?
-    private String m_product;//产品名称
-    private String m_component;//组件名称
+    private String m_severity;//�?�?�?
+    private String m_product;//产�?�??称
+    private String m_component;//组件�??称
     private Date m_lastEdit;
     public Bug() {
         super();
@@ -18,7 +18,8 @@ public class Bug {
     public Bug(String assignee, String bugNumber, String text) {
         m_bugNumber = bugNumber;
         m_assignee = assignee;
-        m_text = text;
+        m_creator = text;
+
         m_customer = "Frederic";
         m_status = 11;
         m_severity = "S2";
@@ -30,7 +31,7 @@ public class Bug {
     public Bug(String bugNumber, String assignee, String text, String customer, int status, String severity, String product, String component, Date lastEdit) {
         m_bugNumber = bugNumber;
         m_assignee = assignee;
-        m_text = text;
+        m_creator = text;
         m_customer = customer;
         m_status = status;
         m_severity = severity;
@@ -57,11 +58,11 @@ public class Bug {
     }
 
     public String getText() {
-        return m_text;
+        return m_creator;
     }
 
     public void setText(String text) {
-        m_text = text;
+        m_creator = text;
     }
 
     public String getCustomer() {
