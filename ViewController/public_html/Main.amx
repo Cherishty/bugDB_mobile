@@ -3,16 +3,16 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
     <amx:panelPage id="pp1" inlineStyle="font-size:small; text-align:left;background-color:#87CEFA;">
         <amx:facet name="header">
-            <amx:outputText value="Home" id="ot1" inlineStyle="text-align:center;width:200px;height:35px;background-color:#87CEFA;"/>
+            <amx:outputText value="Home" id="ot1" inlineStyle="text-align:center;height:35px;background-color:#87CEFA;"/>
         </amx:facet>
         <amx:tableLayout id="tl1" width="100%" shortDesc="Table">
             <amx:rowLayout id="rl1">
                 <amx:cellFormat id="cf2" width="100%" shortDesc="Cell">
                     <amx:inputText value="#{bindings.filter.inputValue}" simple="true" id="inputText2"
-                                   styleClass="hr-inputText-search" hintText="Search for Employee"/>
+                                   styleClass="hr-inputText-search" hintText="Search for Employee" inlineStyle="width:130px;"/>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf22" width="100%" shortDesc="Cell">
-                  <amx:spacer id="s2" width="49"/>
+                  <amx:spacer id="s2" width="40"/>
                     <amx:commandButton text="search" id="cb3" action="Search" shortDesc="search"
                                        actionListener="#{bindings.Execute.execute}" iconPosition="trailing"
                                        inlineStyle="text-align:right;border-radius:10px;"/>
@@ -44,20 +44,19 @@
         </amx:tableLayout>
         <amx:spacer id="s3" height="79"/>
         
-        <amx:tableLayout id="tl3">
+        <amx:tableLayout id="tl3" width="100%" shortDesc="Table">
             <amx:rowLayout id="rl2">
-                <amx:cellFormat id="cf1">
+                <amx:cellFormat id="cf1" width="100%" shortDesc="Cell">
                  <amx:commandButton text="#{bindings.loginUserName.inputValue}" id="cb1" 
                            inlineStyle="width:85px;height:30px;font-size:20px;border-radius:10px;"/>
                  </amx:cellFormat>
-                <amx:cellFormat id="cf4">
-                <amx:spacer id="s7" width="70"/>
-                </amx:cellFormat>
-                <amx:cellFormat id="cf3">
+               
+                <amx:cellFormat id="cf3" width="100%" shortDesc="Cell">
+                <amx:spacer id="s4" width="27"/>
                 <amx:commandButton actionListener="#{bindings.getResetLoginUserName.execute}" text="Sign out"
                            disabled="#{!bindings.getResetLoginUserName.enabled}" id="cb4"
                            inlineStyle="width:85px;height:30px;font-size:20px;text-align:right;border-radius:10px;"
-                           action="backlogin"/>
+                           action="backlogin" iconPosition="trailing"/>
                  </amx:cellFormat>
             </amx:rowLayout>
             
