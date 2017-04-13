@@ -26,6 +26,7 @@ public class managerBean {
     private static final String SORTID = "EMPLOYEE_ID";
     private static final int ALLRECORDS = -1;
     private HashMap m_allBugs = null;
+    private HashMap m_saveSearch=null;
     private List m_allTalks=null;
     
     private Bug m_oriSearchBug=null;
@@ -33,11 +34,13 @@ public class managerBean {
 
     public managerBean() {
     }
-  
+
     private void initAllBugs(){
         m_allBugs=(new BugList(1)).getBugList();
     }
-    
+    private void initSaveSearch(){
+        m_saveSearch=(new BugList("1")).getBugList();
+    }
   
     private void initAllTalks(){
         m_allTalks=(new TalkList(1)).getTalkList();
@@ -57,7 +60,8 @@ public class managerBean {
             remark+="  Stauts ->"+m_updSearchBug.getStatus();
         if(m_oriSearchBug.getSeverity()!=m_updSearchBug.getSeverity())
             remark+="  Severity ->"+m_updSearchBug.getSeverity();
-        m_allTalks.add(new Talk(m_filter, m_username, new Date(), remark));
+        if(!remark.equals(""))
+            m_allTalks.add(new Talk(m_filter, m_username, new Date(), remark));
         
         if (m_bugtalktext.length() > 0) {
             if (flagOfAdvanced == true) {
@@ -67,7 +71,10 @@ public class managerBean {
             }
             m_bugtalktext = "";
         }
-        
+        if(!remark.equals("") && m_bugtalktext.length() > 0)
+        {
+            m_updSearchBug.setLastEdit(new Date());
+        }
 
     }
 
@@ -140,70 +147,40 @@ public class managerBean {
 //        s_employees = selectBugsFromDB(whereClause, SORTLNAME, ALLRECORDS);
 //        ..........................give  s_employees to searchBug  to get wanted BU
     }
-    
-    private String m_assignee="";
-    private String m_customer="";
-    private String m_status="";
-    private String m_severity="";
-    private String m_product="";
-    public String getAssignee() {
-        return m_assignee;
+
+    private Bug m_condition=new Bug();
+
+    public Bug getCondition() {
+        return m_condition;
     }
+
+    public void setCondition(Bug condition) {
+        m_condition = condition;
+    }
+
     public void executeAdvanced(){
         bugnumdata=bugnum;
-         m_assignee="";
-         m_customer="";
-         m_status="";
-         m_severity="";
-         m_product="";
-    }
-    public void setAssignee(String assignee) {
-        m_assignee = assignee;
+        m_condition=new Bug();
     }
 
-
-    public String getCustomer() {
-        return m_customer;
-    }
-
-    public void setCustomer(String customer) {
-        m_customer = customer;
-    }
-
-    public String getStatus() {
-        return m_status;
-    }
-
-    public void setStatus(String status) {
-        m_status = status;
-    }
-
-    public String getSeverity() {
-        return m_severity;
-    }
-
-    public void setSeverity(String severity) {
-        m_severity = severity;
-    }
-
-    public String getProduct() {
-        return m_product;
-    }
-
-    public void setProduct(String product) {
-        m_product = product;
-    }
     private boolean flagOfAdvanced = false;
     private String bugnum="";
     private String bugnumdata="";
 
+    public void AddSaveCondition()
+    {
+        HashMap saveSearch=getSaveSearch();
+        saveSearch.put(m_condition.getBugNumber(),m_condition);
+    }
+
     public Bug[] getAdvancedBug(){
         flagOfAdvanced =true;
-        String assignee=getAssignee();
-        String customer=getCustomer();
-        String status= getStatus();
-        String severity=getSeverity();
-        String product=getProduct();
+        String assignee=m_condition.getAssignee();
+        String customer=m_condition.getCustomer();
+        String status= m_condition.getStatus();
+        String severity=m_condition.getSeverity();
+        String product=m_condition.getProduct();
+        Date lastEdit=m_condition.getLastEdit();
         HashMap bugMap =getAllBugs();
         ArrayList result= new ArrayList();
         Iterator iter = bugMap.entrySet().iterator();
@@ -212,7 +189,7 @@ public class managerBean {
         Bug val = (Bug)entry.getValue();
             if(assignee.length()==0||val.getAssignee().equals(assignee)){
                 if(val.getCustomer().equals(customer)||customer.length()==0){
-                    if((val.getStatus()+"").equals(status)||status.length()==0){
+                    if(val.getStatus().equals(status)||status.length()==0){
                         if(val.getSeverity().equals(severity)||severity.length()==0){
                             if(val.getProduct().equals(product)||product.length()==0){
                                     result.add(val);
@@ -291,6 +268,29 @@ public class managerBean {
         return m_allBugs;
     }
 
+    private HashMap getSaveSearch()
+    {
+        if(m_saveSearch == null){
+            initSaveSearch();
+        }
+
+        return m_saveSearch;
+    }
+    public Bug[] getSaveSearchArray()
+    {
+        ArrayList result= new ArrayList();
+        Iterator iter = getSaveSearch().entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry entry = (Map.Entry) iter.next();
+            Bug val = (Bug)entry.getValue();
+            result.add(val);
+        }
+
+        Bug result1[]=new Bug[result.size()];
+        return (Bug[])result.toArray(result1);
+
+    }
+
     private List getAllTalks() 
     {
         if(m_allTalks == null){
@@ -331,7 +331,7 @@ public class managerBean {
         result.toArray(result1);
         List result2= new ArrayList();
         for(int i=0;i<result.size();i++){
-            if(result1[i].getStatus()==30||result1[i].getStatus()==80)   
+            if(result1[i].getStatus().equals("30")||result1[i].getStatus().equals("80"))   
                 result2.add(result1[i]);
         }
         Bug result3[]=new Bug[result2.size()];

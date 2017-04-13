@@ -8,5 +8,14 @@
     <amx:facet name="primary">
       <amx:commandButton id="cb1" text="Back" action="back1" inlineStyle="border-radius:10px;background:#768d87;"/>
     </amx:facet>
+    <amx:listView var="row" value="#{bindings.saveSearchArray.collectionModel}"
+                  fetchSize="#{bindings.saveSearchArray.rangeSize}" dividerAttribute="bugNumber" dividerMode="all"
+                  styleClass="adfmf-listView-insetList" id="lv1">
+      <amx:listItem id="li1">
+        <amx:outputText value="#{row.lastEdit}" id="ot2">
+          <amx:convertDateTime pattern="#{bindings.saveSearchArray.hints.lastEdit.format}" id="cdt1"/>
+        </amx:outputText>
+      </amx:listItem>
+    </amx:listView>
   </amx:panelPage>
 </amx:view>
