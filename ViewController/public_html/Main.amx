@@ -13,7 +13,7 @@
                                    styleClass="hr-inputText-search" hintText="Input Bug Number"  inlineStyle="width:180px;"/>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf22" width="100%" shortDesc="Cell">
-                  <amx:spacer id="s2" width="90"/>
+                  <amx:spacer id="s2" width="110"/>
                     <amx:commandButton text="search" id="cb3" action="Search" shortDesc="search"
                                        actionListener="#{bindings.Execute.execute}" iconPosition="trailing"
                                        inlineStyle="text-align:right;border-radius:10px;background:#768d87;"/>
@@ -35,7 +35,7 @@
                 </amx:cellFormat>
             </amx:rowLayout>
             </amx:tableLayout>
-            <amx:spacer id="s13" height="5"/>
+            <amx:spacer id="s13" height="10"/>
             <amx:tableLayout id="tl4" width="100%" shortDesc="Table" inlineStyle="border-bottom-style:solid; border-width: 1px;border-bottom-color:#768d87;">
             <amx:rowLayout id="rl12">
                 <amx:cellFormat id="cf212" width="100%" shortDesc="Cell">
@@ -44,7 +44,7 @@
                 </amx:cellFormat>
             </amx:rowLayout>
             </amx:tableLayout>
-            <amx:spacer id="s14" height="5"/>
+            <amx:spacer id="s14" height="10"/>
             <amx:tableLayout id="tl5" width="100%" shortDesc="Table" inlineStyle="border-bottom-style:solid; border-width: 1px;border-bottom-color:#768d87;">
             <amx:rowLayout id="rl13">
                 <amx:cellFormat id="cf213" width="100%" shortDesc="Cell">
@@ -53,7 +53,7 @@
                 </amx:cellFormat>
             </amx:rowLayout>
             </amx:tableLayout>
-            <amx:spacer id="s15" height="5"/>
+            <amx:spacer id="s15" height="10"/>
             <amx:tableLayout id="tl6" width="100%" shortDesc="Table" inlineStyle="border-bottom-style:solid; border-width: 1px;border-bottom-color:#768d87;">
             <amx:rowLayout id="rl14">
                 <amx:cellFormat id="cf214" width="100%" shortDesc="Cell">
@@ -62,20 +62,20 @@
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
-        <amx:spacer id="s11" height="140"/>       
+        <amx:spacer id="s11" height="115"/>       
         <amx:tableLayout id="tl3" width="100%" shortDesc="Table">
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf1" width="100%" shortDesc="Cell">
                  <amx:spacer id="s10" width="10"/>
                  <amx:commandButton text="#{bindings.loginUserName.inputValue}" id="cb1" 
-                           inlineStyle="width:85px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"/>
+                           inlineStyle="text-align:center;width:85px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"/>
                  </amx:cellFormat>
                
                 <amx:cellFormat id="cf3" width="100%" shortDesc="Cell">
-                <amx:spacer id="s4" width="68"/>
+                <amx:spacer id="s4" width="93"/>
                 <amx:commandButton actionListener="#{bindings.getResetLoginUserName.execute}" text="Sign out"
                            disabled="#{!bindings.getResetLoginUserName.enabled}" id="cb4"
-                           inlineStyle="width:85px;height:30px;font-size:20px;text-align:right;border-radius:10px;background:#768d87;"
+                           inlineStyle="width:85px;height:30px;font-size:20px;text-align:center;border-radius:10px;background:#768d87;"
                            action="backlogin" iconPosition="trailing"/>
                  </amx:cellFormat>
             </amx:rowLayout>      

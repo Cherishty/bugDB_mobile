@@ -6,7 +6,7 @@
       <amx:outputText value="My Saved Searches" id="ot1"/>
     </amx:facet>
     <amx:facet name="primary">
-      <amx:commandButton id="cb1" text="Back" action="back1"/>
+      <amx:commandButton id="cb1" text="Back" action="back1" inlineStyle="border-radius:10px;background:#768d87;"/>
     </amx:facet>
   </amx:panelPage>
 </amx:view>
