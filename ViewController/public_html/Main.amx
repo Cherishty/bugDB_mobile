@@ -40,7 +40,7 @@
             <amx:rowLayout id="rl12">
                 <amx:cellFormat id="cf212" width="100%" shortDesc="Cell">
                     <amx:spacer id="s7" width="20"/>
-                    <amx:commandLink text="Open Bugs for My Org" id="cl2" action="go2" inlineStyle=" text-decoration: none;font-size:20px;"/>
+                    <amx:commandLink text="Open Bugs for My Org" id="cl2" action="searchall" inlineStyle=" text-decoration: none;font-size:20px;"/>
                 </amx:cellFormat>
             </amx:rowLayout>
             </amx:tableLayout>
@@ -66,14 +66,7 @@
         </amx:tableLayout>
          
  <amx:spacer id="s15x" height="5"/>
-            <amx:tableLayout id="tl6x" width="100%" shortDesc="Table" inlineStyle="border-bottom-style:solid; border-width: 1px;border-bottom-color:#768d87;">
-            <amx:rowLayout id="rl14x">
-                <amx:cellFormat id="cf214x" width="100%" shortDesc="Cell">
-                    <amx:spacer id="s9x" width="20"/>
-                    <amx:commandLink text="Search all related Bug" id="cl4x" action="searchall" inlineStyle=" text-decoration: none;font-size:20px;"/>
-                </amx:cellFormat>
-            </amx:rowLayout>
-        </amx:tableLayout>
+          
         <amx:spacer id="s11" height="140"/>        <amx:tableLayout id="tl3" width="100%" shortDesc="Table">
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf1" width="100%" shortDesc="Cell">

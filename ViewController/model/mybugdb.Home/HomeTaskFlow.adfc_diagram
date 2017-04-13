@@ -97,21 +97,6 @@
          name="x">379.0</property>
    </View>
    <View
-      id="View11">
-      <property
-         name="activityId">openBugsforMyOrg</property>
-      <property
-         name="page">/openBugsforMyOrg.amx</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>openBugsforMyOrg&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="y">173.59766</property>
-      <property
-         name="x">169.0</property>
-   </View>
-   <View
       id="View12">
       <property
          name="activityId">openBugsAssignedtoMe</property>
@@ -163,33 +148,13 @@
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase16"
-      from="View2"
-      to="View11">
-      <property
-         name="fromOutcome">go2</property>
-      <property
-         name="sdm:polyPoints">L30,470.0,316.09766,211.84042,169.74707,R46</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase17"
-      from="View11"
-      to="View2">
-      <property
-         name="fromOutcome">back2</property>
-      <property
-         name="sdm:polyPoints">R54,210.0,176.74707,468.16525,323.09766,L38</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
       id="ControlFlowCase18"
       from="View2"
       to="View12">
       <property
          name="fromOutcome">go3</property>
       <property
-         name="sdm:polyPoints">L46,466.55896,330.09766,158.0,342.74707,R46</property>
+         name="sdm:polyPoints">L38,466.3137,323.09766,158.0,342.74707,R46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -199,7 +164,7 @@
       <property
          name="fromOutcome">back3</property>
       <property
-         name="sdm:polyPoints">R54,158.14339,349.74707,466.7008,337.09766,L54</property>
+         name="sdm:polyPoints">R54,158.22276,349.74707,466.5339,330.09766,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -209,7 +174,7 @@
       <property
          name="fromOutcome">go4</property>
       <property
-         name="sdm:polyPoints">L70,470.0,351.09766,259.16125,495.74707,R54</property>
+         name="sdm:polyPoints">L62,470.0,344.09766,259.24698,495.74707,R54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -219,7 +184,7 @@
       <property
          name="fromOutcome">back4</property>
       <property
-         name="sdm:polyPoints">R46,257.0,488.74707,467.8478,344.09766,L62</property>
+         name="sdm:polyPoints">R46,257.0,488.74707,467.76266,337.09766,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
