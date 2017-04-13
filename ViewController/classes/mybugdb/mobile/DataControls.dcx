@@ -105,4 +105,17 @@
       <bean-definition BeanClass="mybugdb.mobile.User" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
     </Source>
   </AdapterDataControl>
+  <AdapterDataControl id="UserList" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mybugdb.mobile.UserList"
+                      BeanClass="mybugdb.mobile.UserList" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="mybugdb.mobile.User"/>
+      <TypeInfo FullName="mybugdb.mobile.UserList"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="mybugdb.mobile.UserList" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
 </DataControlConfigs>

@@ -52,6 +52,16 @@ public class managerBean {
     }
 
     public void updateSearchPage() {
+
+        String remark="";
+        if(m_oriSearchBug.getAssignee()!=m_updSearchBug.getAssignee())
+            remark+="Assign ->"+m_updSearchBug.getAssignee();
+        if(m_oriSearchBug.getStatus()!=m_updSearchBug.getStatus())
+            remark+="  Stauts ->"+m_updSearchBug.getStatus();
+        if(m_oriSearchBug.getSeverity()!=m_updSearchBug.getSeverity())
+            remark+="  Severity ->"+m_updSearchBug.getSeverity();
+        m_allTalks.add(new Talk(m_filter, m_username, new Date(), remark));
+        
         if (m_bugtalktext.length() > 0) {
             if (flagOfAdvanced == true) {
                 m_allTalks.add(new Talk(bugnumdata, m_username, new Date(), m_bugtalktext));
@@ -60,14 +70,6 @@ public class managerBean {
             }
             m_bugtalktext = "";
         }
-        String remark="";
-        if(m_oriSearchBug.getAssignee()!=m_updSearchBug.getAssignee())
-            remark+="Assign to:"+m_updSearchBug.getAssignee();
-        if(m_oriSearchBug.getStatus()!=m_updSearchBug.getStatus())
-            remark+="Stauts to:"+m_updSearchBug.getStatus();
-        if(m_oriSearchBug.getSeverity()!=m_updSearchBug.getSeverity())
-            remark+="Severity to:"+m_updSearchBug.getSeverity();
-        m_allTalks.add(new Talk(m_filter, m_username, new Date(), remark));
         
 
     }

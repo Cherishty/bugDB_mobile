@@ -66,7 +66,7 @@ public class Bug {
         m_lastEdit = lastEdit;
         m_actionHistoryList = actionHistoryList;
     }
-    public Bool equals(Bug compare)
+    public boolean equals(Bug compare)
     {
         if(m_assignee==compare.getAssignee()&&m_status==compare.getStatus()&& m_severity==compare.getSeverity())
             return true;
