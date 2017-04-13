@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+       <amx:commandButton action="back"  text="Back"
+                 id="cb2x" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"/>
+    </amx:facet>
+    <amx:listView var="row" value="#{bindings.allRelatedBug6.collectionModel}"
+                  fetchSize="#{bindings.allRelatedBug6.rangeSize}" dividerAttribute="assignee" dividerMode="all"
+                  styleClass="adfmf-listView-insetList" id="lv1">
+      <amx:listItem id="li1">
+        <amx:outputText value="#{row.bugNumber}" id="ot1"/>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>
