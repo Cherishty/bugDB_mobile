@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="My_Saved_SearchesPageDef"
+                Package="mybugdb.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="managerBean" id="managerBeanIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="saveSearchArray" RangeSize="25"
+                      DataControl="managerBean" BeanClass="mybugdb.mobile.Bug" id="saveSearchArrayIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="saveSearchArrayIterator" id="saveSearchArray">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="saveSearchArray0">
+        <AttrNames>
+          <Item Value="bugNumber"/>
+          <Item Value="lastEdit"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="saveSearchArrayIterator" id="saveSearchArray1">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="saveSearchArray10">
+        <AttrNames>
+          <Item Value="bugNumber"/>
+          <Item Value="showCondition"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
