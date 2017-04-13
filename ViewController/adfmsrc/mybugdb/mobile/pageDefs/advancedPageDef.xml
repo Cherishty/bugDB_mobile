@@ -117,5 +117,7 @@
     </attributeValues>
     <methodAction id="AddSaveCondition" RequiresUpdateModel="true" Action="invokeMethod" MethodName="AddSaveCondition"
                   IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider"/>
+    <methodAction id="ClearCondition" RequiresUpdateModel="true" Action="invokeMethod" MethodName="ClearCondition"
+                  IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider"/>
   </bindings>
 </pageDefinition>

@@ -1,4 +1,5 @@
 package mybugdb.mobile;
+import java.text.SimpleDateFormat;
 import java.util.*;
 public class Bug {
 
@@ -8,8 +9,8 @@ public class Bug {
     private String m_customer;
     private String m_status;//çŠ¶ï¿½?
     private String m_severity;//ï¿?ï¿?ï¿?
-    private String m_product;//äº§ï¿½?ï¿??ç§?
-    private String m_component;//ç»„ä»¶ï¿??ç§?
+    private String m_product;//äº§ï¿½?ï¿??ï¿?
+    private String m_component;//ç»„ä»¶ï¿??ï¿?
     private Date m_lastEdit;
     private List m_actionHistoryList;
 
@@ -74,6 +75,26 @@ public class Bug {
         m_component = component;
         m_lastEdit = lastEdit;
         m_actionHistoryList = actionHistoryList;
+    }
+    public String ShowCondition()
+    {
+        String result="";
+        if(!m_assignee.equals(""))
+            result+="Assignee = "+m_assignee+" ; ";
+        if(!m_customer.equals(""))
+            result+="Customer = "+m_customer+" ; ";
+        if(!m_status.equals(""))
+            result+="Status = "+m_status+" ; ";
+        if(!m_severity.equals(""))
+            result+="Severity = "+m_severity+" ; ";
+        if(!m_product.equals(""))
+            result+="Product = "+m_product+" ; \n";
+        if(m_lastEdit!=null) {
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String date=sdf.format(m_lastEdit);
+            result += "DateAfter = " + date + " ; ";
+        }
+        return result;
     }
     public String getCreator() {
         return m_creator;

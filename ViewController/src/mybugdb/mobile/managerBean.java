@@ -155,6 +155,10 @@ public class managerBean {
 
     private Bug m_condition=new Bug();
 
+    public void ClearCondition()
+    {
+        m_condition=new Bug();
+    }
     public Bug getCondition() {
         return m_condition;
     }
