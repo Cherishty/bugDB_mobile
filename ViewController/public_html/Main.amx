@@ -44,6 +44,7 @@
                 </amx:cellFormat>
             </amx:rowLayout>
             </amx:tableLayout>
+           
             <amx:spacer id="s14" height="10"/>
             <amx:tableLayout id="tl5" width="100%" shortDesc="Table" inlineStyle="border-bottom-style:solid; border-width: 1px;border-bottom-color:#768d87;">
             <amx:rowLayout id="rl13">
@@ -53,6 +54,7 @@
                 </amx:cellFormat>
             </amx:rowLayout>
             </amx:tableLayout>
+          
             <amx:spacer id="s15" height="10"/>
             <amx:tableLayout id="tl6" width="100%" shortDesc="Table" inlineStyle="border-bottom-style:solid; border-width: 1px;border-bottom-color:#768d87;">
             <amx:rowLayout id="rl14">
@@ -62,19 +64,31 @@
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
-        <amx:spacer id="s11" height="115"/>       
-        <amx:tableLayout id="tl3" width="100%" shortDesc="Table">
+         
+ <amx:spacer id="s15x" height="5"/>
+            <amx:tableLayout id="tl6x" width="100%" shortDesc="Table" inlineStyle="border-bottom-style:solid; border-width: 1px;border-bottom-color:#768d87;">
+            <amx:rowLayout id="rl14x">
+                <amx:cellFormat id="cf214x" width="100%" shortDesc="Cell">
+                    <amx:spacer id="s9x" width="20"/>
+                    <amx:commandLink text="Search all related Bug" id="cl4x" action="searchall" inlineStyle=" text-decoration: none;font-size:20px;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:spacer id="s11" height="140"/>        <amx:tableLayout id="tl3" width="100%" shortDesc="Table">
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf1" width="100%" shortDesc="Cell">
                  <amx:spacer id="s10" width="10"/>
                  <amx:commandButton text="#{bindings.loginUserName.inputValue}" id="cb1" 
+                          
                            inlineStyle="text-align:center;width:85px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"/>
                  </amx:cellFormat>
                
                 <amx:cellFormat id="cf3" width="100%" shortDesc="Cell">
+           
                 <amx:spacer id="s4" width="93"/>
                 <amx:commandButton actionListener="#{bindings.getResetLoginUserName.execute}" text="Sign out"
                            disabled="#{!bindings.getResetLoginUserName.enabled}" id="cb4"
+                     
                            inlineStyle="width:85px;height:30px;font-size:20px;text-align:center;border-radius:10px;background:#768d87;"
                            action="backlogin" iconPosition="trailing"/>
                  </amx:cellFormat>
