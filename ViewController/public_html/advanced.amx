@@ -3,9 +3,9 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
       <amx:facet name="header">
-     <amx:commandButton action="back"  text="Back"
-                         id="cb2" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#768d87"/>
-  </amx:facet>
+          <amx:commandButton action="back" text="Back" actionListener="#{bindings.ClearCondition.execute}"
+                         disabled="#{!bindings.ClearCondition.enabled}" id="cb2" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#768d87"/>
+    </amx:facet>
     <amx:outputText value="Criteria" id="ot1"/>
     <amx:spacer id="s2" width="100"/>
     <amx:panelFormLayout id="pfl1">
