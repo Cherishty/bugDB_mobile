@@ -7,12 +7,12 @@
     <amx:rowLayout id="rl32">
      <amx:cellFormat id="cf42">
      <amx:commandButton action="back" actionListener="#{bindings.setClearFilter.execute}" text="Back"
-                         disabled="#{!bindings.setClearFilter.enabled}" id="cb22" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"/>
+                         disabled="#{!bindings.setClearFilter.enabled}" id="cb22" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#768d87"/>
     </amx:cellFormat >
      <amx:cellFormat id="cf52">
-     <amx:spacer id="s22" width="100"/>
+     <amx:spacer id="s22" width="190"/>
      <amx:commandButton actionListener="#{bindings.updateSearchPage.execute}" text="Submit"
-                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb12" action="to" inlineStyle="width:75px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"
+                      disabled="#{!bindings.updateSearchPage.enabled}" id="cb12" action="to" inlineStyle="width:75px;height:30px;font-size:20px;border-radius:10px;background:#768d87"
                         iconPosition="trailing"/>
     </amx:cellFormat >
     </amx:rowLayout>
@@ -37,12 +37,12 @@
   </amx:panelFormLayout>
   <amx:listView var="row" value="#{bindings.relatedTalkList1.collectionModel}"
                 fetchSize="#{bindings.relatedTalkList1.rangeSize}" dividerAttribute="title" dividerMode="all"
-                styleClass="adfmf-listView-insetList" id="lv2">
+                styleClass="adfmf-listView-insetList" id="lv2" inlineStyle="background:#768d87;">
    <amx:listItem id="li2">
     <amx:outputText value="#{row.text}" id="ot3"/>
    </amx:listItem>
   </amx:listView>
-  <amx:inputText value="#{bindings.bugTalkText.inputValue}" simple="true" id="it9" label="Input Your Text"/>
+  <amx:inputText value="#{bindings.bugTalkText.inputValue}" simple="true" id="it9" label="Input Your Text" hintText="Input Your Text"/>
  </amx:panelPage>
 </amx:view>
 

@@ -41,6 +41,19 @@ public class Bug {
         m_lastEdit = date;
     }
 
+    public Bug(Bug bug)
+    {
+        m_bugNumber = bug.getBugNumber();
+        m_assignee = bug.getAssignee();
+        m_creator = bug.getCreator();
+        m_customer = bug.getCustomer();
+        m_status = bug.getStatus();
+        m_severity = bug.getSeverity();
+        m_product = bug.getProduct();
+        m_component = bug.getComponent();
+        m_lastEdit = bug.getLastEdit();
+        m_actionHistoryList = bug.getActionHistoryList();
+    }
     public Bug(String bugNumber, String assignee, String creator, String customer, int status, String severity, String product, String component, Date lastEdit, List actionHistoryList) {
         m_bugNumber = bugNumber;
         m_assignee = assignee;
@@ -53,7 +66,12 @@ public class Bug {
         m_lastEdit = lastEdit;
         m_actionHistoryList = actionHistoryList;
     }
-
+    public boolean equals(Bug compare)
+    {
+        if(m_assignee==compare.getAssignee()&&m_status==compare.getStatus()&& m_severity==compare.getSeverity())
+            return true;
+        return false;
+    } 
     public String getCreator() {
         return m_creator;
     }

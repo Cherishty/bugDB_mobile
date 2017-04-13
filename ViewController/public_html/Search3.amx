@@ -3,10 +3,11 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:outputText value="Header" id="ot1"/>
+      <amx:outputText value="Header" id="ot1" inlineStyle="text-align:center;height:35px;background-color:#768d87;color:White;"/>
     </amx:facet>
+    <amx:spacer id="s1" width="10"/>
     <amx:commandButton actionListener="#{bindings.executeAdvanced.execute}" text="Back"
-                       disabled="#{!bindings.executeAdvanced.enabled}" id="cb2" action="back"/>
+                       disabled="#{!bindings.executeAdvanced.enabled}" id="cb2" action="back" inlineStyle="text-align:right;border-radius:10px;background:#768d87;"/>
     <amx:listView var="row" value="#{bindings.advancedBug.collectionModel}"
                   fetchSize="#{bindings.advancedBug.rangeSize}" dividerAttribute="text" dividerMode="all"
                   styleClass="adfmf-listView-insetList" id="lv1">
@@ -15,7 +16,7 @@
         <amx:inputText value="#{row.bindings.bugNumber.inputValue}"
                        label="#{bindings.advancedBug.hints.bugNumber.label}" id="it1"/>
         <amx:commandButton actionListener="#{bindings.executeAdvanced.execute}" text="Edit"
-                           disabled="#{!bindings.executeAdvanced.enabled}"  action="edit" id="cb3"/>
+                           disabled="#{!bindings.executeAdvanced.enabled}"  action="edit" id="cb3" inlineStyle="text-align:right;border-radius:10px;background:#768d87;"/>
       </amx:listItem>
     </amx:listView>
   </amx:panelPage>

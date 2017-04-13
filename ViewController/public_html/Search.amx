@@ -10,7 +10,7 @@
                          disabled="#{!bindings.setClearFilter.enabled}" id="cb2" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"/>
     </amx:cellFormat >
      <amx:cellFormat id="cf5">
-     <amx:spacer id="s2" width="100"/>
+     <amx:spacer id="s2" width="190"/>
      <amx:commandButton actionListener="#{bindings.updateSearchPage.execute}" text="Submit"
                       disabled="#{!bindings.updateSearchPage.enabled}" id="cb1" action="to" inlineStyle="width:75px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"
                         iconPosition="trailing"/>

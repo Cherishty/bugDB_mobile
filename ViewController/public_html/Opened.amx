@@ -3,23 +3,24 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:outputText value="Opend" id="ot1"/>
+      <amx:outputText value="Opened" id="ot1" inlineStyle="text-align:center;height:35px;background-color:#768d87;color:White;"/>
     </amx:facet>       <amx:tableLayout id="tl22">
     <amx:rowLayout id="rl32">
      <amx:cellFormat id="cf42">
+     <amx:spacer id="s1" width="10"/>
      <amx:commandButton action="back"  text="Back"
                         id="cb22" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"/>
     </amx:cellFormat >
      <amx:cellFormat id="cf52">
-     <amx:spacer id="s22" width="100"/>
+     <amx:spacer id="s22" width="235"/>
      <amx:commandButton  text="Graph"
-                      id="cb122" action="analyze" inlineStyle="width:75px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"
+                      id="cb122" action="analyze" inlineStyle="width:70px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"
                         iconPosition="trailing"/>
      </amx:cellFormat >
     </amx:rowLayout>
    </amx:tableLayout>
     <amx:listView var="row" value="#{bindings.opendedBug.collectionModel}" fetchSize="#{bindings.opendedBug.rangeSize}"
-                  dividerAttribute="lastEdit" dividerMode="all" styleClass="adfmf-listView-insetList" id="lv1">
+                  dividerAttribute="lastEdit" dividerMode="all" styleClass="adfmf-listView-insetList" id="lv1" inlineStyle="background:#768d87;">
       <amx:listItem id="li1">
         <amx:outputText value="#{row.bugNumber}" id="ot2"/>
       </amx:listItem>

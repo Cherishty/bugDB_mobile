@@ -3,11 +3,11 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-
-    </amx:facet>
-    <amx:outputText value="Statistic Bug during selected Date" id="ot2">
+    <amx:outputText value="Statistic Bug during selected Date" id="ot2" inlineStyle="text-align:center;height:35px;background-color:#768d87;color:White;">
     </amx:outputText>
+    </amx:facet>  
     <amx:inputDate value="#{bindings.date.inputValue}" label="Selected Date" id="id1"/>
-    <amx:commandButton text="Submit" id="cb1" action="analyze"/>
+    <amx:spacer id="s1" width="20"/>
+    <amx:commandButton text="Submit" id="cb1" action="analyze" inlineStyle="text-align:right;border-radius:10px;background:#768d87;"/>
   </amx:panelPage>
 </amx:view>

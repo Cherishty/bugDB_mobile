@@ -6,7 +6,7 @@
       <amx:outputText value="Open Bugs for My Org" id="ot1"/>
     </amx:facet>
     <amx:facet name="primary">
-      <amx:commandButton id="cb1" text="Back" action="back2"/>
+      <amx:commandButton id="cb1" text="Back" action="back2" inlineStyle="text-align:center;border-radius:10px;background:#768d87;"/>
     </amx:facet>
   </amx:panelPage>
 </amx:view>
