@@ -14,9 +14,8 @@
     <page path="/Statistic.amx" usageId="mybugdb_mobile_StatisticPageDef"/>
     <page path="/Opened.amx" usageId="mybugdb_mobile_OpenedPageDef"/>
 	<page path="/My Saved Searches.amx" usageId="mybugdb_mobile_My_Saved_SearchesPageDef"/>
-  
-    
-</pageMap>
+    <page path="/SearchAll.amx" usageId="mybugdb_mobile_SearchAllPageDef"/>
+  </pageMap>
   <pageDefinitionUsages>
     <page id="mybugdb_mobile_MainPageDef" path="mybugdb.mobile.pageDefs.MainPageDef"/>
     <page id="mybugdb_mobile_SearchPageDef" path="mybugdb.mobile.pageDefs.SearchPageDef"/>
@@ -30,8 +29,8 @@
     <page id="mybugdb_mobile_StatisticPageDef" path="mybugdb.mobile.pageDefs.StatisticPageDef"/>
     <page id="mybugdb_mobile_OpenedPageDef" path="mybugdb.mobile.pageDefs.OpenedPageDef"/>
 	<page id="mybugdb_mobile_My_Saved_SearchesPageDef" path="mybugdb.mobile.pageDefs.My_Saved_SearchesPageDef"/>
-  
-</pageDefinitionUsages>
+    <page id="mybugdb_mobile_SearchAllPageDef" path="mybugdb.mobile.pageDefs.SearchAllPageDef"/>
+  </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="Bug" path="mybugdb.mobile.Bug"/>
     <dc id="managerBean" path="mybugdb.mobile.managerBean"/>
