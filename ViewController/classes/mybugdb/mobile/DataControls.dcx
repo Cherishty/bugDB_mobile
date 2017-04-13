@@ -24,6 +24,7 @@
     <CreatableTypes>
       <TypeInfo FullName="mybugdb.mobile.TalkList"/>
       <TypeInfo FullName="mybugdb.mobile.Bug"/>
+      <TypeInfo FullName="mybugdb.mobile.ActionHistory"/>
     </CreatableTypes>
     <Source>
       <bean-definition BeanClass="mybugdb.mobile.Bug" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
@@ -36,6 +37,7 @@
                       BeanClass="mybugdb.mobile.BugList" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <CreatableTypes>
       <TypeInfo FullName="mybugdb.mobile.BugList"/>
+      <TypeInfo FullName="mybugdb.mobile.Bug"/>
     </CreatableTypes>
     <Source>
       <bean-definition BeanClass="mybugdb.mobile.BugList" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
@@ -64,6 +66,43 @@
     </CreatableTypes>
     <Source>
       <bean-definition BeanClass="mybugdb.mobile.TalkList" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ActionHistory" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mybugdb.mobile.ActionHistory"
+                      BeanClass="mybugdb.mobile.ActionHistory" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="mybugdb.mobile.ActionHistory"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="mybugdb.mobile.ActionHistory" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ActionHistoryList" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mybugdb.mobile.ActionHistoryList"
+                      BeanClass="mybugdb.mobile.ActionHistoryList" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="mybugdb.mobile.ActionHistory"/>
+      <TypeInfo FullName="mybugdb.mobile.ActionHistoryList"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="mybugdb.mobile.ActionHistoryList" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="User" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mybugdb.mobile.User"
+                      BeanClass="mybugdb.mobile.User" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="mybugdb.mobile.User"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="mybugdb.mobile.User" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
     </Source>
   </AdapterDataControl>
 </DataControlConfigs>

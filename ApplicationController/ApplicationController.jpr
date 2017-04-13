@@ -488,13 +488,7 @@
          </hash>
       </hash>
    </hash>
-   <hash n="oracle.jdevimpl.config.JProjectLibraries">
-      <hash n="jdkReference">
-         <value n="id" v="CVM_JDK"/>
-         <value n="isJDK" v="true"/>
-         <value n="jdkVersion" v="1.4"/>
-      </hash>
-   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries"/>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>
    </hash>

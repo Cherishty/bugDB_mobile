@@ -16,7 +16,6 @@ import java.util.Map;
 
 import oracle.adfmf.java.beans.PropertyChangeSupport;
 
-
 public class managerBean {
     private String m_filter = "";
     private String m_username = "";
@@ -32,6 +31,8 @@ public class managerBean {
     private HashMap m_allBugs = null;
     private List m_allTalks=null;
     
+    private Bug m_oriSearchBug=null;
+    private Bug m_updSearchBug=null;
 
     public managerBean() {
     }
@@ -59,6 +60,16 @@ public class managerBean {
             }
             m_bugtalktext = "";
         }
+        String remark="";
+        if(m_oriSearchBug.getAssignee()!=m_updSearchBug.getAssignee())
+            remark+="Assign to:"+m_updSearchBug.getAssignee();
+        if(m_oriSearchBug.getStatus()!=m_updSearchBug.getStatus())
+            remark+="Stauts to:"+m_updSearchBug.getStatus();
+        if(m_oriSearchBug.getSeverity()!=m_updSearchBug.getSeverity())
+            remark+="Severity to:"+m_updSearchBug.getSeverity();
+        m_allTalks.add(new Talk(m_filter, m_username, new Date(), remark));
+        
+
     }
 
     public void setBugTalkText(String bugtalktext ){
@@ -131,73 +142,6 @@ public class managerBean {
 //        ..........................give  s_employees to searchBug  to get wanted BU
     }
     
-    private ArrayList selectBugsFromDB(String filter, String order, int maxRecords) {
-        ArrayList empList = new ArrayList();
-
-        try {
-            Connection conn = DBConnectionFactory.getConnection();
-            conn.setAutoCommit(false);
-            String select = "SELECT * FROM EMPLOYEES";
-            if (filter.length() > 0) {
-                select += " WHERE " + filter;
-            }
-            if (order.length() > 0) {
-                select += " ORDER BY " + order;
-            }
-            if (maxRecords != ALLRECORDS) {
-                select += " lIMIT " + maxRecords;
-            }
-        
-            PreparedStatement pStmt = conn.prepareStatement(select);
-            ResultSet rs = pStmt.executeQuery();
-           
-            while (rs.next()) {
-//                int id = rs.getInt("EMPLOYEE_ID");
-//                String first = rs.getString("FIRST_NAME");
-//                String last = rs.getString("LAST_NAME");
-//                String email = rs.getString("EMAIL");
-//                String phone = rs.getString("PHONE_NUMBER");
-//                Date hireDate = rs.getDate("HIRE_DATE");
-//                if (hireDate == null) {
-//                    hireDate = new Date(0);
-//                }
-//                
-//                
-//                String jobId = rs.getString("JOB_ID");
-//                double salary = getDouble(rs, "SALARY");
-//                double commPct = getDouble(rs, "COMMISSION_PCT");
-//                int mgrId = rs.getInt("MANAGER_ID");
-//                int deptId = rs.getInt("DEPARTMENT_ID");
-//                String emppic = NOPIC;
-//
-//                String picpath = apppath + "/" + id + ".png";
-//                File f = new File(picpath);
-//                if (f != null && f.exists()) {
-//                    emppic = "file://" + picpath + "?" + System.currentTimeMillis();
-//                } else {
-//                    byte[] b = rs.getBytes("PIC");
-//                    if (b != null && b.length > 0) {
-//                        FileOutputStream out = new FileOutputStream(picpath);
-//                        out.write(b);
-//                        out.close();
-//                        emppic = "file://" + picpath + "?" + System.currentTimeMillis();
-//                    }
-//                }
-//                
-//                Bugloyee e =
-//                    new Bugloyee(id, first, last, email, phone, hireDate, jobId, salary, commPct, mgrId, deptId, emppic,
-//                                 false);
-//                empList.add(e);
-            }
-            rs.close();
-          
-        } catch (SQLException e) {
-           
-        } catch (Exception e) {
-        }
-        
-        return empList;
-    }
     private String m_assignee="";
     private String m_customer="";
     private String m_status="";
@@ -296,6 +240,8 @@ public class managerBean {
          sub= getFilter();
         }
         Bug result= (Bug)(getAllBugs().get(sub));
+        m_oriSearchBug=new Bug(result);
+        m_updSearchBug=result;
         return result;
     }
     
