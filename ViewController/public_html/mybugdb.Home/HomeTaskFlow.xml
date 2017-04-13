@@ -14,9 +14,6 @@
     <view id="mySavedSearches">
       <page>/My Saved Searches.amx</page>
     </view>
-    <view id="openBugsforMyOrg">
-      <page>/openBugsforMyOrg.amx</page>
-    </view>
     <view id="openBugsAssignedtoMe">
       <page>/openBugsAssignedtoMe.amx</page>
     </view>
@@ -45,10 +42,6 @@
       <control-flow-case id="__6">
         <from-outcome>go1</from-outcome>
         <to-activity-id>mySavedSearches</to-activity-id>
-      </control-flow-case>
-      <control-flow-case id="__11">
-        <from-outcome>go2</from-outcome>
-        <to-activity-id>openBugsforMyOrg</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__14">
         <from-outcome>go3</from-outcome>
@@ -94,13 +87,6 @@
       <from-activity-id>mySavedSearches</from-activity-id>
       <control-flow-case id="__10">
         <from-outcome>back1</from-outcome>
-        <to-activity-id>Main</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
-    <control-flow-rule id="__12">
-      <from-activity-id>openBugsforMyOrg</from-activity-id>
-      <control-flow-case id="__13">
-        <from-outcome>back2</from-outcome>
         <to-activity-id>Main</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
