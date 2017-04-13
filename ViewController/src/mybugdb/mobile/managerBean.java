@@ -50,13 +50,17 @@ public class managerBean {
         this.m_filter = filter;
     }
 
-    public void updateSearchPage(){
-            if(m_bugtalktext.length()>0){
-            m_allTalks.add(new Talk(m_filter, m_username,new Date(),m_bugtalktext));
+    public void updateSearchPage() {
+        if (m_bugtalktext.length() > 0) {
+            if (flagOfAdvanced == true) {
+                m_allTalks.add(new Talk(bugnumdata, m_username, new Date(), m_bugtalktext));
+            } else {
+                m_allTalks.add(new Talk(m_filter, m_username, new Date(), m_bugtalktext));
+            }
             m_bugtalktext = "";
-            }          
         }
-    
+    }
+
     public void setBugTalkText(String bugtalktext ){
         m_bugtalktext = bugtalktext;
     }
@@ -203,6 +207,7 @@ public class managerBean {
         return m_assignee;
     }
     public void executeAdvanced(){
+        bugnumdata=bugnum;
          m_assignee="";
          m_customer="";
          m_status="";
@@ -246,6 +251,9 @@ public class managerBean {
         m_product = product;
     }
     private boolean flagOfAdvanced = false;
+    private String bugnum="";
+    private String bugnumdata="";
+
     public Bug[] getAdvancedBug(){
         flagOfAdvanced =true;
         String assignee=getAssignee();
@@ -265,6 +273,7 @@ public class managerBean {
                         if(val.getSeverity().equals(severity)||severity.length()==0){
                             if(val.getProduct().equals(product)||product.length()==0){
                                     result.add(val);
+                                bugnum =val.getBugNumber();
                             }
                         }
                     }
@@ -280,18 +289,24 @@ public class managerBean {
 
     public Bug getSearchedBug(){
         String sub ="";
-//        if( flagOfAdvanced ==true){
-//          sub =  
-//        }
-//        else{
+        if( flagOfAdvanced ==true){
+          sub =  bugnumdata;
+        }
+        else{
          sub= getFilter();
-//        }
+        }
         Bug result= (Bug)(getAllBugs().get(sub));
         return result;
     }
     
     public Talk[] getRelatedTalkList(){
-        String sub= getFilter();
+        String sub="";
+        if( flagOfAdvanced ==true){
+          sub =  bugnumdata;
+        }
+        else{
+         sub= getFilter();
+        }
         ArrayList result= new ArrayList();
         List allTalks=getAllTalks();
         for (int i=0;i<allTalks.size();i++)

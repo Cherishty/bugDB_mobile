@@ -2,4 +2,5 @@
 <adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
                    version="1.0" name="BugDB" id="com.company.BugDB" appControllerFolder="ApplicationController">
   <adfmf:featureReference id="mybugdb.Home"/>
+  <adfmf:featureReference id="mybugdb.Test"/>
 </adfmf:application>

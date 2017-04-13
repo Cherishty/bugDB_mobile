@@ -2,4 +2,5 @@
 <task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
    <task-flow-descriptor path="mybugdb.Home/HomeTaskFlow.xml" id="HomeTaskFlow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" page-type="unspecified"/>
    <task-flow-descriptor path="adfc-mobile-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="mybugdb.Test/Test-task-flow.xml" id="Test-task-flow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" page-type="unspecified"/>
 </task-flow-registry>

@@ -348,12 +348,12 @@
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase33"
+      id="ControlFlowCase34"
       from="View30"
-      to="View23">
+      to="View4">
       <property
          name="fromOutcome">edit</property>
       <property
-         name="sdm:polyPoints">T50,527.0,602.2471,602.0,523.94824,L50</property>
+         name="sdm:polyPoints">R29,B6</property>
    </ControlFlowCase>
 </SDM>

@@ -5,4 +5,9 @@
       <adfmf:amx file="mybugdb.Home/HomeTaskFlow.xml#HomeTaskFlow"/>
     </adfmf:content>
   </adfmf:feature>
+  <adfmf:feature id="mybugdb.Test" name="Test">
+    <adfmf:content id="mybugdb.Test.1">
+      <adfmf:amx file="mybugdb.Test/Test-task-flow.xml#Test-task-flow"/>
+    </adfmf:content>
+  </adfmf:feature>
 </adfmf:features>

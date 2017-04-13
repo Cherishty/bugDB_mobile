@@ -141,7 +141,7 @@
       </control-flow-case>
       <control-flow-case id="__30">
         <from-outcome>edit</from-outcome>
-        <to-activity-id>Search1</to-activity-id>
+        <to-activity-id>Search</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>
