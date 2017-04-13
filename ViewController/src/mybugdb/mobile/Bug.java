@@ -6,15 +6,24 @@ public class Bug {
     private String m_assignee;
     private String m_creator;
     private String m_customer;
-    private int m_status;//çŠ¶ï¿½?
-    private String m_severity;//ï¿½?ï¿½?ï¿½?
-    private String m_product;//äº§ï¿½?ï¿½??ç§°
-    private String m_component;//ç»„ä»¶ï¿½??ç§°
+    private String m_status;//çŠ¶ï¿½?
+    private String m_severity;//ï¿?ï¿?ï¿?
+    private String m_product;//äº§ï¿½?ï¿??ç§?
+    private String m_component;//ç»„ä»¶ï¿??ç§?
     private Date m_lastEdit;
     private List m_actionHistoryList;
 
     public Bug() {
-        super();
+
+        m_bugNumber = "";
+        m_assignee = "";
+        m_creator = "";
+        m_customer = "";
+        m_status = "";
+        m_severity = "";
+        m_product = "";
+        m_component = "";
+        m_lastEdit = null;
     }
 
     public Bug(String assignee, String bugNumber, String text) {
@@ -22,14 +31,14 @@ public class Bug {
         m_assignee = assignee;
         m_creator = text;
         m_customer = "Frederic";
-        m_status = 11;
+        m_status = "11";
         m_severity = "S2";
         m_product = "bugDB_Mobile";
         m_component = "bugDB_Mobile";
         m_lastEdit = new Date();
     }
     
-    public Bug(String assignee, String bugNumber, String text,int status,Date date) {
+    public Bug(String assignee, String bugNumber, String text,String status,Date date) {
         m_bugNumber = bugNumber;
         m_assignee = assignee;
         m_creator = text;
@@ -54,7 +63,7 @@ public class Bug {
         m_lastEdit = bug.getLastEdit();
         m_actionHistoryList = bug.getActionHistoryList();
     }
-    public Bug(String bugNumber, String assignee, String creator, String customer, int status, String severity, String product, String component, Date lastEdit, List actionHistoryList) {
+    public Bug(String bugNumber, String assignee, String creator, String customer, String status, String severity, String product, String component, Date lastEdit, List actionHistoryList) {
         m_bugNumber = bugNumber;
         m_assignee = assignee;
         m_creator = creator;
@@ -66,12 +75,6 @@ public class Bug {
         m_lastEdit = lastEdit;
         m_actionHistoryList = actionHistoryList;
     }
-    public boolean equals(Bug compare)
-    {
-        if(m_assignee==compare.getAssignee()&&m_status==compare.getStatus()&& m_severity==compare.getSeverity())
-            return true;
-        return false;
-    } 
     public String getCreator() {
         return m_creator;
     }
@@ -120,11 +123,11 @@ public class Bug {
         m_customer = customer;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return m_status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         m_status = status;
     }
 

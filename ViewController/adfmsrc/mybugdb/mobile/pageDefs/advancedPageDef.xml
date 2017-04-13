@@ -8,6 +8,8 @@
     <iterator Binds="root" RangeSize="25" DataControl="managerBean" id="managerBeanIterator"/>
     <accessorIterator MasterBinding="managerBeanIterator" Binds="advancedBug" RangeSize="25" DataControl="managerBean"
                       BeanClass="mybugdb.mobile.Bug" id="advancedBugIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="condition" RangeSize="25" DataControl="managerBean"
+                      BeanClass="mybugdb.mobile.Bug" id="conditionIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="BugIterator" id="assignee">
@@ -78,5 +80,42 @@
         <Item Value="lastEdit"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="conditionIterator" id="bugNumber">
+      <AttrNames>
+        <Item Value="bugNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conditionIterator" id="assignee2">
+      <AttrNames>
+        <Item Value="assignee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conditionIterator" id="customer2">
+      <AttrNames>
+        <Item Value="customer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conditionIterator" id="status2">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conditionIterator" id="severity2">
+      <AttrNames>
+        <Item Value="severity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conditionIterator" id="product2">
+      <AttrNames>
+        <Item Value="product"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conditionIterator" id="lastEdit2">
+      <AttrNames>
+        <Item Value="lastEdit"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="AddSaveCondition" RequiresUpdateModel="true" Action="invokeMethod" MethodName="AddSaveCondition"
+                  IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider"/>
   </bindings>
 </pageDefinition>
