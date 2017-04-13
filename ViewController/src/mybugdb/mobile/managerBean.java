@@ -14,15 +14,12 @@ import java.util.List;
 
 import java.util.Map;
 
-import oracle.adfmf.java.beans.PropertyChangeSupport;
-
 public class managerBean {
     private String m_filter = "";
     private String m_username = "";
     private String m_loginusername = "";
     private String m_password = "";
     private String m_bugtalktext = "";
-    private transient PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
     private static List s_employees = null;
     private static final String SORTLNAME = "LAST_NAME";
     private static final String SORTIDDESC = "EMPLOYEE_ID DESC";
