@@ -15,7 +15,9 @@ public class BugList {
         super();    
     }
     public BugList(int test) {
+        
         m_bugList = new HashMap();
+        //public Bug(String bugNumber, String assignee, String creator, String customer, int status, String severity, String product, String component, Date lastEdit, List actionHistoryList) {
         m_bugList.put("0001",new Bug("zy", "0001", "come with me"));
         m_bugList.put("0002",new Bug("zy", "0002", "for a little ride"));
         m_bugList.put("0003",new Bug("zy", "0003", "look at the sun"));

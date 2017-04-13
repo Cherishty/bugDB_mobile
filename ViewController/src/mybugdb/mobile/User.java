@@ -1,26 +1,40 @@
 package mybugdb.mobile;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class User {
     private String m_userName;
-    private int m_userID;
+    private String m_userID;
     private String m_teamName;
-    private List m_teamMembers;
+    private HashMap m_teamMembers;
     private String m_jobTile;
     private String m_email;
-
+    private String m_manager;
     public User() {
         super();
     }
 
-    public User(String userName, int userID, String teamName, List teamMembers, String jobTile, String email) {
+    public User(String userName, String userID, String teamName, HashMap teamMembers, String jobTile, String email, String manager) {
         m_userName = userName;
         m_userID = userID;
         m_teamName = teamName;
         m_teamMembers = teamMembers;
         m_jobTile = jobTile;
         m_email = email;
+        m_manager = manager;
+    }
+
+    public String getManager() {
+        return m_manager;
+    }
+
+    public void setManager(String manager) {
+        m_manager = manager;
+    }
+
+    public void setTeamMembers(HashMap teamMembers) {
+        m_teamMembers = teamMembers;
     }
 
     public String getUserName() {
@@ -31,7 +45,7 @@ public class User {
         m_userName = userName;
     }
 
-    public int getUserID() {
+    public String getUserID() {
         return m_userID;
     }
 
@@ -43,7 +57,7 @@ public class User {
         m_email = email;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         m_userID = userID;
     }
 
@@ -55,37 +69,14 @@ public class User {
         m_teamName = teamName;
     }
 
-    public List getTeamMembers() {
+    public HashMap getTeamMembers() {
         return m_teamMembers;
     }
 
     public void AddMember(User newMem)
     {
-        m_teamMembers.add(newMem);
+        m_teamMembers.put(newMem.getUserID(), newMem);
     }
-
-    public User GetMemberInfoByName(String name)
-    {
-        for (int i=0;i<m_teamMembers.size();i++)
-        {
-            User currentUser=(User)(m_teamMembers.get(i));
-            if(currentUser.getUserName().equals(name))
-                return currentUser;
-        }
-        return null;
-    }
-
-    public User GetMemberInfoByID(int ID)
-    {
-        for (int i=0;i<m_teamMembers.size();i++)
-        {
-            User currentUser=(User)(m_teamMembers.get(i));
-            if(currentUser.getUserID()==ID)
-                return currentUser;
-        }
-        return null;
-    }
-
     public String getJobTile() {
         return m_jobTile;
     }

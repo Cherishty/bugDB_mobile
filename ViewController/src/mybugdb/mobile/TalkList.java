@@ -13,6 +13,7 @@ public class TalkList
     public TalkList(int test)
     {
         m_talkList=new ArrayList();
+        //public Talk(String bugNumber,String name, Date date, String text )
                m_talkList.add(new Talk("0001", "wjm",new Date(),"i have a apple"));
                m_talkList.add(new Talk("0001", "zy",new Date(),"a, apple pen"));
                m_talkList.add(new Talk("0001", "wyp",new Date(),"I have a pen "));
