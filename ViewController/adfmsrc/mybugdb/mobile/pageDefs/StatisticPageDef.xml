@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="StatisticPageDef"
+                Package="mybugdb.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="managerBean" id="managerBeanIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="opendedBug" RangeSize="25" DataControl="managerBean"
+                      BeanClass="mybugdb.mobile.Bug" id="opendedBugIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="assignedBug" RangeSize="25" DataControl="managerBean"
+                      BeanClass="mybugdb.mobile.Bug" id="assignedBugIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="managerBeanIterator" id="date">
+      <AttrNames>
+        <Item Value="date"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="opendedBugIterator" id="opendedBug">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="opendedBug0">
+        <AttrNames>
+          <Item Value="lastEdit"/>
+          <Item Value="bugNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="assignedBugIterator" id="assignedBug">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="assignedBug0">
+        <AttrNames>
+          <Item Value="text"/>
+          <Item Value="bugNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

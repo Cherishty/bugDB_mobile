@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="advancedPageDef"
+                Package="mybugdb.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Bug" id="BugIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="managerBean" id="managerBeanIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="advancedBug" RangeSize="25" DataControl="managerBean"
+                      BeanClass="mybugdb.mobile.Bug" id="advancedBugIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BugIterator" id="assignee">
+      <AttrNames>
+        <Item Value="assignee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BugIterator" id="customer">
+      <AttrNames>
+        <Item Value="customer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BugIterator" id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BugIterator" id="severity">
+      <AttrNames>
+        <Item Value="severity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BugIterator" id="product">
+      <AttrNames>
+        <Item Value="product"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BugIterator" id="lastEdit">
+      <AttrNames>
+        <Item Value="lastEdit"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="advancedBugIterator" id="advancedBug">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="advancedBug0">
+        <AttrNames>
+          <Item Value="text"/>
+          <Item Value="bugNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="managerBeanIterator" id="assignee1">
+      <AttrNames>
+        <Item Value="assignee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="customer1">
+      <AttrNames>
+        <Item Value="customer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="status1">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="severity1">
+      <AttrNames>
+        <Item Value="severity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="product1">
+      <AttrNames>
+        <Item Value="product"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="lastEdit1">
+      <AttrNames>
+        <Item Value="lastEdit"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Opend" id="ot1"/>
+    </amx:facet>       <amx:tableLayout id="tl22">
+    <amx:rowLayout id="rl32">
+     <amx:cellFormat id="cf42">
+     <amx:commandButton action="back"  text="Back"
+                        id="cb22" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"/>
+    </amx:cellFormat >
+     <amx:cellFormat id="cf52">
+     <amx:spacer id="s22" width="100"/>
+     <amx:commandButton  text="Graph"
+                      id="cb122" action="analyze" inlineStyle="width:75px;height:30px;font-size:20px;border-radius:10px;background:#768d87;"
+                        iconPosition="trailing"/>
+     </amx:cellFormat >
+    </amx:rowLayout>
+   </amx:tableLayout>
+    <amx:listView var="row" value="#{bindings.opendedBug.collectionModel}" fetchSize="#{bindings.opendedBug.rangeSize}"
+                  dividerAttribute="lastEdit" dividerMode="all" styleClass="adfmf-listView-insetList" id="lv1">
+      <amx:listItem id="li1">
+        <amx:outputText value="#{row.bugNumber}" id="ot2"/>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>
