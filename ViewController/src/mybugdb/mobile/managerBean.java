@@ -30,6 +30,7 @@ public class managerBean {
     private static final String SORTID = "EMPLOYEE_ID";
     private static final int ALLRECORDS = -1;
     private HashMap m_allBugs = null;
+    private HashMap m_allUsers = null;
     private List m_allTalks=null;
     
 
@@ -40,6 +41,9 @@ public class managerBean {
         m_allBugs=(new BugList(1)).getBugList();
     }
     
+    private void initAllUsers(){
+        m_allUsers=(new UserList(1)).getUserList();
+    }
   
     private void initAllTalks(){
         m_allTalks=(new TalkList(1)).getTalkList();
@@ -345,6 +349,14 @@ public class managerBean {
         
         return m_allBugs;
     }
+    
+    private HashMap getAllUsers(){
+        if(m_allUsers == null){
+            this.initAllUsers();
+        }
+        
+        return m_allUsers;
+    }
 
     private List getAllTalks() 
     {
@@ -391,6 +403,53 @@ public class managerBean {
         }
         Bug result3[]=new Bug[result2.size()];
         return (Bug [])result2.toArray(result3);
+    }
+
+    public Bug[] getAllRelatedBug() {
+        String username = m_username;
+        HashMap allUsers = getAllUsers();
+        Bug result[] = null;
+        HashMap tmp = null;
+        User vall = (User)(allUsers.get(username));
+        tmp = vall.getTeamMembers();
+        if (tmp != null) {
+            ;
+            List resultlist = new ArrayList();
+            Iterator iter = tmp.entrySet().iterator();
+            while (iter.hasNext()) {
+                Map.Entry entry = (Map.Entry)iter.next();
+                User val = (User)entry.getValue();
+                Bug result1[] = getTmpAssignedBug(val.getUserName());
+                for (int i = 0; i < result1.length; i++) {
+                    resultlist.add(result1[i]);
+                }
+            }
+            Bug result2[] = this.getAssignedBug();
+            for (int i = 0; i < result2.length; i++) {
+                resultlist.add(result2[i]);
+            }
+            Bug result1[] = new Bug[resultlist.size()];
+            return (Bug[])resultlist.toArray(result1);
+        } else {
+            return this.getAssignedBug();
+        }
+    }
+    public Bug[] getTmpAssignedBug(String username){
+        String sub= username;
+        ArrayList result= new ArrayList();
+        HashMap allBugs=getAllBugs();
+        
+        Iterator iter = allBugs.entrySet().iterator();
+        while (iter.hasNext()) {
+        Map.Entry entry = (Map.Entry) iter.next();
+        Bug val = (Bug)entry.getValue();
+            if(val.getAssignee().equals(sub)){
+                result.add(val);
+            }
+                
+        }
+        Bug result1[]=new Bug[result.size()];
+        return (Bug[])result.toArray(result1);
     }
 }
 

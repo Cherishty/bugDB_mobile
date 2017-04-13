@@ -18,12 +18,12 @@ public class UserList {
         User cty=new User("cty", "6666","DevChina",null,"CTO","cty@com","zy");
         temp.put(cty.getUserID(),cty);
         m_userList=new HashMap();
-        m_userList.put("8888", new User("zy", "8888","DevChina",temp,"CEO","zy@com","wyp"));
-        m_userList.put("6666",new User("cty", "6666","DevChina",null,"CTO","cty@com","zy"));
+        m_userList.put("zy", new User("zy", "8888","DevChina",temp,"CEO","zy@com","wyp"));
+        m_userList.put("cty",new User("cty", "6666","DevChina",null,"CTO","cty@com","zy"));
 
     }
     public void Add(User user)
     {
-        m_userList.put(user.getUserID(),user);
+        m_userList.put(user.getUserName(),user);
     }
 }

@@ -149,7 +149,7 @@
       <property
          name="fromOutcome">go1</property>
       <property
-         name="sdm:polyPoints">T50,511.0,279.59766,379.0,141.94824,B50</property>
+         name="sdm:polyPoints">T33,500.5,279.59766,375.5,144.67223,B44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -159,7 +159,7 @@
       <property
          name="fromOutcome">back1</property>
       <property
-         name="sdm:polyPoints">B56,382.5,141.94824,514.5,276.7837,T56</property>
+         name="sdm:polyPoints">B56,382.5,141.94824,507.5,276.8936,T44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -355,5 +355,40 @@
          name="fromOutcome">edit</property>
       <property
          name="sdm:polyPoints">R29,B6</property>
+   </ControlFlowCase>
+   <View
+      id="View37">
+      <property
+         name="activityId">SearchAll</property>
+      <property
+         name="page">/SearchAll.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SearchAll&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">92.29883</property>
+      <property
+         name="x">691.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase38"
+      from="View2"
+      to="View37">
+      <property
+         name="fromOutcome">searchall</property>
+      <property
+         name="sdm:polyPoints">T56,514.5,276.15988,687.5,145.94824,B44</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase39"
+      from="View37"
+      to="View2">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">B56,694.5,149.4134,521.5,279.59766,T67</property>
    </ControlFlowCase>
 </SDM>
