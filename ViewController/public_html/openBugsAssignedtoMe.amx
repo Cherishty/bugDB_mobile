@@ -6,12 +6,12 @@
       <amx:outputText value="Open Bugs Assigned to Me" id="ot1"/>
     </amx:facet>
     <amx:facet name="primary">
-      <amx:commandButton id="cb1" text="Back" action="back3"/>
+      <amx:commandButton id="cb1" text="Back" action="back3" inlineStyle="text-align:center;border-radius:10px;background:#768d87;"/>
     </amx:facet>
     <amx:outputText value="Assigned Bug" id="ot3"/>
     <amx:listView var="row" value="#{bindings.assignedBug3.collectionModel}"
                   fetchSize="#{bindings.assignedBug3.rangeSize}" dividerAttribute="bugNumber" dividerMode="all"
-                  styleClass="adfmf-listView-insetList" id="lv2">
+                  styleClass="adfmf-listView-insetList" id="lv2" inlineStyle="background:#768d87;">
       <amx:listItem id="li2">
         <amx:outputText value="#{row.text}" id="ot4"/>
       </amx:listItem>

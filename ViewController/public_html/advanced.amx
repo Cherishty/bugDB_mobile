@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+      <amx:facet name="header">
+     <amx:commandButton action="back"  text="Back"
+                         id="cb2" inlineStyle="width:60px;height:30px;font-size:20px;border-radius:10px;background:#4080BF"/>
+  </amx:facet>
+    <amx:outputText value="Criteria" id="ot1"/>
+    <amx:spacer id="s2" width="100"/>
+    <amx:inputText value="#{bindings.assignee1.inputValue}" label="#{bindings.assignee1.hints.label}" id="it1"/>
+    <amx:inputText value="#{bindings.customer1.inputValue}" label="#{bindings.customer1.hints.label}" id="it2"/>
+    <amx:inputText value="#{bindings.status1.inputValue}" label="#{bindings.status1.hints.label}" id="it3"/>
+    <amx:inputText value="#{bindings.severity1.inputValue}" label="#{bindings.severity1.hints.label}" id="it4"/>
+    <amx:inputText value="#{bindings.product1.inputValue}" label="#{bindings.product1.hints.label}" id="it5"/>
+    <amx:commandButton text="Submit" id="cb1" action="search"/>
+  </amx:panelPage>
+</amx:view>

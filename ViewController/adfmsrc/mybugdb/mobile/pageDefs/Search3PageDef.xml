@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="Search3PageDef"
+                Package="mybugdb.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="managerBean" id="managerBeanIterator"/>
+    <accessorIterator MasterBinding="managerBeanIterator" Binds="advancedBug" RangeSize="25" DataControl="managerBean"
+                      BeanClass="mybugdb.mobile.Bug" id="advancedBugIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="advancedBugIterator" id="advancedBug">
+      <nodeDefinition DefName="mybugdb.mobile.Bug" Name="advancedBug0">
+        <AttrNames>
+          <Item Value="text"/>
+          <Item Value="bugNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="managerBeanIterator" id="assignee">
+      <AttrNames>
+        <Item Value="assignee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="size">
+      <AttrNames>
+        <Item Value="size"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="size1">
+      <AttrNames>
+        <Item Value="size1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="size2">
+      <AttrNames>
+        <Item Value="size2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="size3">
+      <AttrNames>
+        <Item Value="size3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="size4">
+      <AttrNames>
+        <Item Value="size4"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="managerBeanIterator" id="size5">
+      <AttrNames>
+        <Item Value="size5"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="executeAdvanced" RequiresUpdateModel="true" Action="invokeMethod" MethodName="executeAdvanced"
+                  IsViewObjectMethod="false" DataControl="managerBean" InstanceName="data.managerBean.dataProvider"/>
+  </bindings>
+</pageDefinition>

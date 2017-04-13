@@ -28,6 +28,18 @@ public class Bug {
         m_component = "bugDB_Mobile";
         m_lastEdit = new Date();
     }
+    
+    public Bug(String assignee, String bugNumber, String text,int status,Date date) {
+        m_bugNumber = bugNumber;
+        m_assignee = assignee;
+        m_creator = text;
+        m_customer = "Frederic";
+        m_status = status;
+        m_severity = "S2";
+        m_product = "bugDB_Mobile";
+        m_component = "bugDB_Mobile";
+        m_lastEdit = date;
+    }
 
     public Bug(Bug bug)
     {

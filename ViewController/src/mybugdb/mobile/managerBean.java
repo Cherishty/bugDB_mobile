@@ -307,5 +307,36 @@ public class managerBean {
 //        else
            return "login";
     }
+    
+    private Date date=null;
+    public void setDate(Date ddate){
+        date=ddate;
+    }
+    public Date getDate(){
+        return date;
+    }
+    
+    public Bug[] getOpendedBug(){
+        Date selectedDate = getDate();
+        List result= new ArrayList();
+        HashMap allBugs=getAllBugs(); 
+        Iterator iter = allBugs.entrySet().iterator();
+        while (iter.hasNext()) {
+        Map.Entry entry = (Map.Entry) iter.next();
+        Bug val = (Bug)entry.getValue();
+            if(val.getLastEdit().after(selectedDate)){
+                result.add(val);
+            }       
+        }
+        Bug result1[]=new Bug[result.size()];
+        result.toArray(result1);
+        List result2= new ArrayList();
+        for(int i=0;i<result.size();i++){
+            if(result1[i].getStatus()==30||result1[i].getStatus()==80)   
+                result2.add(result1[i]);
+        }
+        Bug result3[]=new Bug[result2.size()];
+        return (Bug [])result2.toArray(result3);
+    }
 }
 

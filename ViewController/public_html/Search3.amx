@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1"/>
+    </amx:facet>
+    <amx:commandButton actionListener="#{bindings.executeAdvanced.execute}" text="Back"
+                       disabled="#{!bindings.executeAdvanced.enabled}" id="cb2" action="back"/>
+    <amx:listView var="row" value="#{bindings.advancedBug.collectionModel}"
+                  fetchSize="#{bindings.advancedBug.rangeSize}" dividerAttribute="text" dividerMode="all"
+                  styleClass="adfmf-listView-insetList" id="lv1">
+      <amx:listItem id="li1">
+        <amx:outputText value="#{row.bugNumber}" id="ot2"/>
+        <amx:inputText value="#{row.bindings.bugNumber.inputValue}"
+                       label="#{bindings.advancedBug.hints.bugNumber.label}" id="it1"/>
+        <amx:commandButton actionListener="#{bindings.executeAdvanced.execute}" text="Edit"
+                           disabled="#{!bindings.executeAdvanced.enabled}"  action="edit" id="cb3"/>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>
